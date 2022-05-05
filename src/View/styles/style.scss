@@ -1,1 +1,7 @@
 @import "home";
+@import "shirt";
+@mixin centerItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

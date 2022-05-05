@@ -20,4 +20,85 @@
   text-transform: uppercase;
   text-align: center;
 }
+
+#ShirtPage .shirt__header {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+#ShirtPage .shirt__header span {
+  line-height: 40px;
+}
+
+#ShirtPage .shirt__header span span {
+  cursor: pointer;
+}
+
+#ShirtPage .shirt__content {
+  overflow: hidden;
+}
+
+#ShirtPage .shirt__content .content__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#ShirtPage .shirt__content .content__list .col-xl-12d5 {
+  margin: 6px 0 8px;
+  -ms-flex-preferred-size: 16%;
+      flex-basis: 16%;
+  height: 420px;
+}
+
+#ShirtPage .shirt__content .content__list .col-xl-12d5 lord-icon {
+  cursor: pointer;
+}
+
+#ShirtPage .shirt__content .content__list p {
+  margin: 6px;
+  padding: 0;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-transform: capitalize;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#ShirtPage .shirt__content .content__list span {
+  margin: 0 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#ShirtPage .shirt__content .content__list .list__img {
+  height: 304px;
+  cursor: pointer;
+}
+
+#ShirtPage .shirt__content .content__list .list--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#ShirtPage .shirt__content .content__list .list--item .item__img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin: 6px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */

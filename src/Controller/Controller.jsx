@@ -4,6 +4,7 @@ import TShirt from "../View/components/TShirt";
 import Shirt from "../View/components/Shirt";
 import Skirt from "../View/components/Skirt";
 import Vest from "../View/components/Vest";
+import Cart from "../View/components/Cart";
 import Trousers from "../View/components/Trousers";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
@@ -18,7 +19,23 @@ const PAGE_SHIRT = "shirt";
 const PAGE_TSHIRT = "tshirt";
 const PAGE_SKIRT = "skirt";
 const PAGE_TROUSERS = "trousers";
+const PAGE_CART = "cart";
 export default function Controller() {
+  const [cart, setCart] = useState([]);
+  const addToCart = (product) => {
+    let newCart = [...cart];
+    let itemInCart = newCart.find((item) => product.name === item.name);
+    if (itemInCart) {
+      itemInCart.quantity++;
+    } else {
+      itemInCart = {
+        ...product,
+        quantity: 1,
+      };
+      newCart.push(itemInCart);
+    }
+    setCart(newCart);
+  };
   const [page, setPage] = useState(PAGE_HOME);
   const nextPage = (pages) => setPage(pages);
   const aboutLoza = [
@@ -131,8 +148,9 @@ export default function Controller() {
               <lord-icon
                 src="https://cdn.lordicon.com/slkvcfos.json"
                 trigger="hover"
+                onClick={() => nextPage(PAGE_CART)}
               ></lord-icon>
-              <span>0</span>
+              <span>{cart.length}</span>
             </li>
           </ul>
         </div>
@@ -141,10 +159,13 @@ export default function Controller() {
       <div id="content--controller">
         {page === PAGE_HOME && <Home />}
         {page === PAGE_SKIRT && <Skirt />}
-        {page === PAGE_SHIRT && <Shirt />}
+        {page === PAGE_SHIRT && (
+          <Shirt cart={cart} setCart={setCart} addToCart={addToCart} />
+        )}
         {page === PAGE_TROUSERS && <Trousers />}
         {page === PAGE_VEST && <Vest />}
         {page === PAGE_TSHIRT && <TShirt />}
+        {page === PAGE_CART && <Cart cart={cart} setCart={setCart} />}
       </div>
       {/*  */}
       <div id="footer">

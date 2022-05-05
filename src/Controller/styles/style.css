@@ -5,10 +5,12 @@
           box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
+  font-family: "Merriweather", serif;
+  color: #333333;
 }
 
 #Controller {
-  padding: 0 6px;
+  padding: 0 12px;
 }
 
 #Controller ul,
@@ -35,16 +37,16 @@
   padding: 0;
 }
 
-#header .navbar--logo {
+#header .navbar__logo {
   cursor: pointer;
 }
 
-#header .navbar--logo .logo__img {
+#header .navbar__logo .logo--img {
   width: 90px;
   height: 45px;
 }
 
-#header .navbar--list {
+#header .navbar__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +56,7 @@
   padding: 0 12px;
 }
 
-#header .navbar--link {
+#header .navbar__link {
   font-size: 16px;
   text-transform: uppercase;
   display: -webkit-box;
@@ -71,7 +73,107 @@
   cursor: pointer;
 }
 
+#header .navbar__link:hover {
+  border-bottom: 2px solid #fcaf17;
+}
+
+#header .navbar__search .search__in {
+  width: 90%;
+  height: 32px;
+  padding-left: 12px;
+  font-size: 14px;
+  border: 1px solid #dde1ef;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
 #content--controller {
   min-height: 1000px;
+  padding: 10px 0;
+}
+
+#footer {
+  padding-bottom: 12px;
+  font-size: 14px;
+}
+
+#footer .row {
+  margin: 0;
+  padding: 0;
+}
+
+#footer .footer__logo p {
+  margin-bottom: 0.6rem;
+  text-align: left;
+}
+
+#footer .footer__logo .footer__list .footer__link {
+  cursor: pointer;
+  margin: 0 6px;
+}
+
+#footer .footer__logo .footer__list .footer__link .icon {
+  height: 32px;
+  width: 32px;
+}
+
+#footer .footer__about {
+  padding: 0 24px;
+}
+
+#footer .footer__info .info--item {
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+#footer .footer__info .info--item__img {
+  margin-right: 6px;
+}
+
+@-webkit-keyframes iconFadeIn {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  50% {
+    -webkit-transform: scale(1.06);
+            transform: scale(1.06);
+  }
+  75% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes iconFadeIn {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  50% {
+    -webkit-transform: scale(1.06);
+            transform: scale(1.06);
+  }
+  75% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=style.css.map */

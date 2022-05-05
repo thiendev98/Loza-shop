@@ -5,10 +5,13 @@ import Shirt from "../View/components/Shirt";
 import Skirt from "../View/components/Skirt";
 import Vest from "../View/components/Vest";
 import Trousers from "../View/components/Trousers";
+import { loadAnimation } from "lottie-web";
+import { defineLordIconElement } from "lord-icon-element";
 import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./styles/style.css";
 import logo from "./images/logo.png";
 import footerImg from "./images/footer.png";
+defineLordIconElement(loadAnimation);
 const PAGE_HOME = "home";
 const PAGE_VEST = "vest";
 const PAGE_SHIRT = "shirt";
@@ -76,7 +79,6 @@ export default function Controller() {
       info: "sale@loza.vn",
     },
   ];
-
   return (
     <div id="Controller">
       <div id="header">
@@ -88,10 +90,10 @@ export default function Controller() {
             <img className="logo--img" src={logo} />
           </div>
           <ul className="navbar__list col-xl-5">
-            <li className="navbar__link" onClick={() => nextPage(PAGE_TSHIRT)}>
+            <li className="navbar__link" onClick={() => nextPage(PAGE_SHIRT)}>
               Áo phông
             </li>
-            <li className="navbar__link" onClick={() => nextPage(PAGE_SHIRT)}>
+            <li className="navbar__link" onClick={() => nextPage(PAGE_TSHIRT)}>
               Áo sơ mi
             </li>
             <li
@@ -107,17 +109,31 @@ export default function Controller() {
               Vest
             </li>
           </ul>
+          <div className="col-xl-1"></div>
           <div className="navbar__search col-xl-4">
             <input
               className="search__in"
               type="text"
               placeholder="Tìm sản phẩm"
             />
+            <button className="btn btn--search">
+              <img src="https://bizweb.dktcdn.net/100/438/408/themes/848101/assets/search.svg" />
+            </button>
           </div>
-          <ul className="navbar--user row container-fluid col-xl-2">
-            <li className="user__user col-xl-4">Logo</li>
-            <li className="user__heart col-xl-4">Logo</li>
-            <li className="user__cart col-xl-4">Logo</li>
+          <ul className="navbar__user col-xl-1">
+            <li className="user--customer">
+              <lord-icon
+                trigger="hover"
+                src="https://cdn.lordicon.com/dxjqoygy.json"
+              ></lord-icon>
+            </li>
+            <li className="user--cart">
+              <lord-icon
+                src="https://cdn.lordicon.com/slkvcfos.json"
+                trigger="hover"
+              ></lord-icon>
+              <span>0</span>
+            </li>
           </ul>
         </div>
       </div>

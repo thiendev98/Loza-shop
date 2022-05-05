@@ -1,5 +1,9 @@
-import React from "react";
+import "../styles/style.css";
 
 export default function Shirt() {
-  return <div>Shirt</div>;
+  return (
+    <div id="ShirtPage">
+      <header>Page</header>
+    </div>
+  );
 }

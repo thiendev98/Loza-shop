@@ -77,14 +77,67 @@
   border-bottom: 2px solid #fcaf17;
 }
 
+#header .navbar__search {
+  position: relative;
+}
+
 #header .navbar__search .search__in {
-  width: 90%;
-  height: 32px;
+  width: 100%;
+  height: 36px;
   padding-left: 12px;
-  font-size: 14px;
+  font-size: 13px;
   border: 1px solid #dde1ef;
   border-radius: 8px;
   outline: none;
+  cursor: pointer;
+}
+
+#header .navbar__search .btn--search {
+  position: absolute;
+  white-space: nowrap;
+  width: 60px;
+  height: 36px;
+  right: 0;
+  top: 0px;
+  background: #0c8796;
+  overflow: hidden;
+  border-radius: 0 8px 8px 0;
+}
+
+#header .navbar__search img {
+  width: 20px;
+  height: auto;
+}
+
+#header .navbar__user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#header .navbar__user .user--cart {
+  position: relative;
+}
+
+#header .navbar__user .user--cart span {
+  position: absolute;
+  background-color: #0c8796;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  right: -12px;
+  border-radius: 50%;
+  line-height: 18px;
+  color: #fff;
+  font-size: 12px;
+}
+
+#header .navbar__user lord-icon {
+  width: 36px;
+  height: 36px;
   cursor: pointer;
 }
 

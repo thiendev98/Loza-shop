@@ -1,0 +1,23 @@
+#HomePage {
+  overflow: hidden;
+}
+
+#HomePage .slick-dots li button {
+  display: none;
+}
+
+#HomePage .wapper__img {
+  border: 2px solid transparent;
+}
+
+#HomePage .container {
+  padding: 8px 0;
+}
+
+#HomePage .container h3 {
+  padding: 12px 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

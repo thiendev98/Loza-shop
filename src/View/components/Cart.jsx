@@ -10,9 +10,13 @@ export default function Cart({ cart, setCart }) {
   };
 
   const setQuantity = (product, amount) => {
-    const newCart = [...cart];
-    newCart.find((item) => item.name === product.name).quantity = amount;
-    setCart(newCart);
+    if (amount === 0) {
+      removeFromCart(product);
+    } else {
+      const newCart = [...cart];
+      newCart.find((item) => item.name === product.name).quantity = amount;
+      setCart(newCart);
+    }
   };
 
   const removeFromCart = (productToRemove) => {
@@ -28,11 +32,25 @@ export default function Cart({ cart, setCart }) {
           <div className="product" key={idx}>
             <h3>{product.name}</h3>
             <h4>{product.price} đ</h4>
-            <input
-              value={product.quantity}
-              onChange={(e) => setQuantity(product, parseInt(e.target.value))}
-            />
-            <img src={product.image} alt={product.name} />
+            <h4>
+              <button
+                onClick={() =>
+                  setQuantity(
+                    product,
+                    product.quantity < 1 ? 0 : product.quantity - 1
+                  )
+                }
+              >
+                -
+              </button>
+              quantity: {product.quantity}{" "}
+              <button
+                onClick={() => setQuantity(product, product.quantity + 1)}
+              >
+                +
+              </button>
+            </h4>
+            <img src={product.link} alt={product.name} />
             <button onClick={() => removeFromCart(product)}>Remove</button>
           </div>
         ))}

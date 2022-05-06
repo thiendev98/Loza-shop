@@ -36,7 +36,11 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình SENITO",
     price: 240000,
     link: senito1,
-    list: [senito1, senito2, senito3],
+    list: [
+      { color: "Tím", img: senito1 },
+      { color: "Be", img: senito2 },
+      { color: "Trắng", img: senito3 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -45,7 +49,10 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình I can & I wil",
     price: 240000,
     link: ican1,
-    list: [ican1, ican2],
+    list: [
+      { color: "Đen", img: ican1 },
+      { color: "Trắng", img: ican2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -54,7 +61,10 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình Monsterpiece",
     price: 245000,
     link: monster1,
-    list: [monster1, monster2],
+    list: [
+      { color: "Xanh", img: monster1 },
+      { color: "Be", img: monster2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -63,7 +73,10 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình gấu PICK ME",
     price: 245000,
     link: pickme1,
-    list: [pickme1, pickme2],
+    list: [
+      { color: "Be", img: pickme1 },
+      { color: "Trắng", img: pickme2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -72,7 +85,10 @@ const ShirtList = [
     name: "Áo phông nữ in hình tim",
     price: 210000,
     link: heart1,
-    list: [heart1, heart2],
+    list: [
+      { color: "Đỏ", img: heart1 },
+      { color: "Đen", img: heart2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -81,7 +97,10 @@ const ShirtList = [
     name: "Áo phông nữ in hình họa tiết",
     price: 225000,
     link: loli1,
-    list: [loli1, loli2],
+    list: [
+      { color: "Đen", img: loli1 },
+      { color: "Tím", img: loli2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -90,7 +109,10 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình thỏ",
     price: 245000,
     link: rabbit1,
-    list: [rabbit1, rabbit2],
+    list: [
+      { color: "Đỏ", img: rabbit1 },
+      { color: "Trắng", img: rabbit2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -99,7 +121,10 @@ const ShirtList = [
     name: "Áo phông nữ in chữ Happiness",
     price: 205000,
     link: happiness1,
-    list: [happiness1, happiness2],
+    list: [
+      { color: "Đen", img: happiness1 },
+      { color: "Trắng", img: happiness2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -108,7 +133,10 @@ const ShirtList = [
     name: "Áo phông nữ in hình lá",
     price: 220000,
     link: only1,
-    list: [only1, only2],
+    list: [
+      { color: "Trắng", img: only1 },
+      { color: "Xanh", img: only2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -117,7 +145,10 @@ const ShirtList = [
     name: "Áo phông nữ in hình dưa hấu",
     price: 215000,
     link: melon1,
-    list: [melon1, melon2],
+    list: [
+      { color: "Xanh ngọc", img: melon1 },
+      { color: "Xanh", img: melon2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -126,7 +157,10 @@ const ShirtList = [
     name: "Áo phông nữ in hình gấu nâu",
     price: 225000,
     link: brownbear1,
-    list: [brownbear1, brownbear2],
+    list: [
+      { color: "Vàng", img: brownbear1 },
+      { color: "Trắng", img: brownbear2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -135,7 +169,11 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình",
     price: 250000,
     link: flower1,
-    list: [flower1, flower2, flower3],
+    list: [
+      { color: "Đỏ", img: flower1 },
+      { color: "Hồng", img: flower2 },
+      { color: "Tím than", img: flower3 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -144,7 +182,10 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình tim",
     price: 250000,
     link: heartwalk1,
-    list: [heartwalk1, heartwalk2],
+    list: [
+      { color: "Hồng", img: heartwalk1 },
+      { color: "Trắng", img: heartwalk2 },
+    ],
     size: ["S", "M", "L"],
   },
   {
@@ -153,7 +194,10 @@ const ShirtList = [
     name: "Áo phông nữ in hình hoa cúc",
     price: 220000,
     link: yellowdaisy1,
-    list: [yellowdaisy1, yellowdaisy2],
+    list: [
+      { color: "Đen", img: yellowdaisy1 },
+      { color: "Trắng", img: yellowdaisy2 },
+    ],
     size: ["S", "M", "L"],
   },
 ];

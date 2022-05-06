@@ -12,20 +12,12 @@
     margin-bottom: 10px;
   }
   .shirt__content {
-    overflow: hidden;
-    .content__list {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-wrap: wrap;
-      .col-xl-12d5 {
-        margin: 6px 0 8px;
-        flex-basis: 16%;
-        height: 420px;
-        lord-icon {
-          cursor: pointer;
-        }
-      }
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .content--item {
+      flex-basis: 16%;
+      padding: 12px 0;
       p {
         margin: 6px;
         padding: 0;
@@ -41,6 +33,7 @@
         margin: 0 6px;
         font-size: 16px;
         cursor: pointer;
+        color: #f08522;
       }
       .list__img {
         height: 304px;
@@ -54,6 +47,22 @@
           border-radius: 50%;
           margin: 6px;
           cursor: pointer;
+        }
+      }
+    }
+    .detail--item {
+      flex-basis: 100%;
+      .row {
+        padding: 0;
+        margin: 0;
+      }
+      .detail__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .item--img {
+          width: 80%;
+          border-radius: 4px;
         }
       }
     }

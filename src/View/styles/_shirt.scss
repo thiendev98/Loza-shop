@@ -5,8 +5,13 @@
     padding: 0 12px;
     span {
       line-height: 40px;
+      cursor: pointer;
       span {
         cursor: pointer;
+        transition-duration: 0.1s;
+      }
+      span:hover {
+        color: #fcaf17;
       }
     }
     margin-bottom: 10px;
@@ -38,16 +43,6 @@
       .list__img {
         height: 304px;
         cursor: pointer;
-      }
-      .list--item {
-        display: flex;
-        .item__img {
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          margin: 6px;
-          cursor: pointer;
-        }
       }
     }
     .detail--item {

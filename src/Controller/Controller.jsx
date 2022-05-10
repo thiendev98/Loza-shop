@@ -165,7 +165,13 @@ export default function Controller() {
         {page === PAGE_TROUSERS && <Trousers />}
         {page === PAGE_VEST && <Vest />}
         {page === PAGE_TSHIRT && <TShirt />}
-        {page === PAGE_CART && <Cart cart={cart} setCart={setCart} />}
+        {page === PAGE_CART && (
+          <Cart
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
+        )}
       </div>
       {/*  */}
       <div id="footer">

@@ -35,24 +35,17 @@ const ShirtList = [
     code: "PT302033",
     name: "Áo phông nữ phom rộng in hình SENITO",
     price: 240000,
-    link: senito1,
-    list: [
-      { color: "Tím", img: senito1 },
-      { color: "Be", img: senito2 },
-      { color: "Trắng", img: senito3 },
-    ],
+    link: [senito1, senito2, senito3],
+    color: ["Tím", "Be", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
     key: 2,
     code: "PT302037",
-    name: "Áo phông nữ phom rộng in hình I can & I wil",
+    name: "Áo phông nữ phom rộng in hình I can & I will",
     price: 240000,
-    link: ican1,
-    list: [
-      { color: "Đen", img: ican1 },
-      { color: "Trắng", img: ican2 },
-    ],
+    link: [ican1, ican2],
+    color: ["Đen", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
@@ -60,11 +53,8 @@ const ShirtList = [
     code: "PT302018",
     name: "Áo phông nữ phom rộng in hình Monsterpiece",
     price: 245000,
-    link: monster1,
-    list: [
-      { color: "Xanh", img: monster1 },
-      { color: "Be", img: monster2 },
-    ],
+    link: [monster1, monster2],
+    color: ["Xanh", "Be"],
     size: ["S", "M", "L"],
   },
   {
@@ -72,11 +62,8 @@ const ShirtList = [
     code: "PT402038",
     name: "Áo phông nữ phom rộng in hình gấu PICK ME",
     price: 245000,
-    link: pickme1,
-    list: [
-      { color: "Be", img: pickme1 },
-      { color: "Trắng", img: pickme2 },
-    ],
+    link: [pickme1, pickme2],
+    color: ["Be", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
@@ -84,11 +71,8 @@ const ShirtList = [
     code: "PT402046",
     name: "Áo phông nữ in hình tim",
     price: 210000,
-    link: heart1,
-    list: [
-      { color: "Đỏ", img: heart1 },
-      { color: "Đen", img: heart2 },
-    ],
+    link: [heart1, heart2],
+    color: ["Đỏ", "Đen"],
     size: ["S", "M", "L"],
   },
   {
@@ -96,11 +80,8 @@ const ShirtList = [
     code: "PT402045",
     name: "Áo phông nữ in hình họa tiết",
     price: 225000,
-    link: loli1,
-    list: [
-      { color: "Đen", img: loli1 },
-      { color: "Tím", img: loli2 },
-    ],
+    link: [loli1, loli2],
+    color: ["Đen", "Tím"],
     size: ["S", "M", "L"],
   },
   {
@@ -108,11 +89,8 @@ const ShirtList = [
     code: "PT402035",
     name: "Áo phông nữ phom rộng in hình thỏ",
     price: 245000,
-    link: rabbit1,
-    list: [
-      { color: "Đỏ", img: rabbit1 },
-      { color: "Trắng", img: rabbit2 },
-    ],
+    link: [rabbit1, rabbit2],
+    color: ["Đỏ", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
@@ -120,11 +98,8 @@ const ShirtList = [
     code: "PT302024",
     name: "Áo phông nữ in chữ Happiness",
     price: 205000,
-    link: happiness1,
-    list: [
-      { color: "Đen", img: happiness1 },
-      { color: "Trắng", img: happiness2 },
-    ],
+    link: [happiness1, happiness2],
+    color: ["Đen", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
@@ -132,11 +107,8 @@ const ShirtList = [
     code: "PT302027",
     name: "Áo phông nữ in hình lá",
     price: 220000,
-    link: only1,
-    list: [
-      { color: "Trắng", img: only1 },
-      { color: "Xanh", img: only2 },
-    ],
+    link: [only1, only2],
+    color: ["Trắng", "Xanh"],
     size: ["S", "M", "L"],
   },
   {
@@ -144,11 +116,8 @@ const ShirtList = [
     code: "PT402050",
     name: "Áo phông nữ in hình dưa hấu",
     price: 215000,
-    link: melon1,
-    list: [
-      { color: "Xanh ngọc", img: melon1 },
-      { color: "Xanh", img: melon2 },
-    ],
+    link: [melon1, melon2],
+    color: ["Xanh ngọc", "Xanh"],
     size: ["S", "M", "L"],
   },
   {
@@ -156,11 +125,8 @@ const ShirtList = [
     code: "PT502062",
     name: "Áo phông nữ in hình gấu nâu",
     price: 225000,
-    link: brownbear1,
-    list: [
-      { color: "Vàng", img: brownbear1 },
-      { color: "Trắng", img: brownbear2 },
-    ],
+    link: [brownbear1, brownbear2],
+    color: ["Vàng", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
@@ -168,12 +134,8 @@ const ShirtList = [
     code: "PT302021",
     name: "Áo phông nữ phom rộng in hình",
     price: 250000,
-    link: flower1,
-    list: [
-      { color: "Đỏ", img: flower1 },
-      { color: "Hồng", img: flower2 },
-      { color: "Tím than", img: flower3 },
-    ],
+    link: [flower1, flower2, flower3],
+    color: ["Đỏ", "Hồng", "Tím than"],
     size: ["S", "M", "L"],
   },
   {
@@ -181,11 +143,8 @@ const ShirtList = [
     code: "PT302019",
     name: "Áo phông nữ phom rộng in hình tim",
     price: 250000,
-    link: heartwalk1,
-    list: [
-      { color: "Hồng", img: heartwalk1 },
-      { color: "Trắng", img: heartwalk2 },
-    ],
+    link: [heartwalk1, heartwalk2],
+    color: ["Hồng", "Trắng"],
     size: ["S", "M", "L"],
   },
   {
@@ -193,11 +152,8 @@ const ShirtList = [
     code: "PT302012",
     name: "Áo phông nữ in hình hoa cúc",
     price: 220000,
-    link: yellowdaisy1,
-    list: [
-      { color: "Đen", img: yellowdaisy1 },
-      { color: "Trắng", img: yellowdaisy2 },
-    ],
+    link: [yellowdaisy1, yellowdaisy2],
+    color: ["Đen", "Trắng"],
     size: ["S", "M", "L"],
   },
 ];

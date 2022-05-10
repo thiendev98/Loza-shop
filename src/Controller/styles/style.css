@@ -142,7 +142,6 @@
 }
 
 #content--controller {
-  min-height: 1000px;
   padding: 10px 0;
 }
 
@@ -162,6 +161,8 @@
 }
 
 #footer .footer__logo .footer__list .footer__link {
+  -webkit-animation: iconFadeIn 1s linear infinite;
+          animation: iconFadeIn 1s linear infinite;
   cursor: pointer;
   margin: 0 6px;
 }

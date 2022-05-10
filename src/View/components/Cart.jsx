@@ -1,10 +1,15 @@
 import React from "react";
-
-export default function Cart({ cart, setCart }) {
+import { FaTrash } from "react-icons/fa";
+import { loadAnimation } from "lottie-web";
+import { defineLordIconElement } from "lord-icon-element";
+defineLordIconElement(loadAnimation);
+export default function Cart({ cart, setCart, onClick }) {
   const getTotalSum = () => {
     return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0);
   };
-
+  const getTotalSumItem = (product) => {
+    return product.price * product.quantity;
+  };
   const clearCart = () => {
     setCart([]);
   };
@@ -24,39 +29,105 @@ export default function Cart({ cart, setCart }) {
   };
 
   return (
-    <>
-      <h1>Cart</h1>
-      {cart.length > 0 && <button onClick={clearCart}>Clear Cart</button>}
-      <div className="products">
-        {cart.map((product, idx) => (
-          <div className="product" key={idx}>
-            <h3>{product.name}</h3>
-            <h4>{product.price} đ</h4>
-            <h4>
-              <button
-                onClick={() =>
-                  setQuantity(
-                    product,
-                    product.quantity < 1 ? 0 : product.quantity - 1
-                  )
-                }
-              >
-                -
-              </button>
-              quantity: {product.quantity}{" "}
-              <button
-                onClick={() => setQuantity(product, product.quantity + 1)}
-              >
-                +
-              </button>
-            </h4>
-            <img src={product.link} alt={product.name} />
-            <button onClick={() => removeFromCart(product)}>Remove</button>
+    <div id="CartPage">
+      {cart.length === 0 && (
+        <div className="cart__empty">
+          <img
+            className="cart__empty--img"
+            src="https://bizweb.dktcdn.net/100/438/408/themes/848101/assets/blank_cart.svg?1646575637708"
+          />
+          <p>Giỏ hàng của bạn trống</p>
+          <button onClick={onClick}>Tiếp tục mua sắm</button>
+        </div>
+      )}
+      {cart.length > 0 && (
+        <div className="cart__products">
+          <div className="row container-fluid">
+            <div className="col-xl-9">
+              <header>
+                <h5>
+                  Đơn hàng của bạn <span>({cart.length}) Sản phẩm</span>
+                </h5>
+              </header>
+              <div className="cart__products--header row container-fluid ">
+                <div className="col-xl-6">Sản phẩm</div>
+                <div className="col-xl-2"> Đơn giá </div>
+                <div className="col-xl-2"> Số lượng </div>
+                <div className="col-xl-2"> Thành tiền </div>
+              </div>
+              {cart.map((product, idx) => (
+                <div
+                  className="row container-fluid cart__products--item"
+                  key={idx}
+                >
+                  <div className="col-xl-6 row container-fluid">
+                    <img className="col-xl-2" src={product.link[0]} />
+                    <div className="col-xl-10">
+                      <p className="cart__products--item__name">
+                        {product.name}
+                      </p>
+                      <div className="cart__products--item__size">
+                        <span>{product.size}</span>{" "}
+                      </div>
+                      <button
+                        className="btn--remove"
+                        onClick={() => removeFromCart(product)}
+                      >
+                        <FaTrash className="icon__trash" />
+                        <span>Xóa</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div className="col-xl-2 cart__products--item__price">
+                    <span> {product.price} đ</span>
+                  </div>
+                  <div className="col-xl-2 cart__products--item__quatity">
+                    <button
+                      onClick={() =>
+                        setQuantity(
+                          product,
+                          product.quantity < 1 ? 0 : product.quantity - 1
+                        )
+                      }
+                    >
+                      -
+                    </button>
+                    <span>{product.quantity}</span>
+                    <button
+                      onClick={() => setQuantity(product, product.quantity + 1)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="col-xl-2 cart__products--item__total">
+                    {getTotalSumItem(product)} đ{" "}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="cart__products--payment col-xl-3">
+              <div className="payment--title row container-fluid">
+                <div className="col-xl-4">
+                  <lord-icon
+                    className="icon__truck--kun"
+                    trigger="loop"
+                    src="https://cdn.lordicon.com/uetqnvvg.json"
+                  ></lord-icon>
+                </div>
+                <div className="col-xl-8">
+                  <p>Miễn phí giao hàng</p>
+                  <p>Giao hàng siêu tốc</p>
+                </div>
+              </div>
+              <div className="payment--total">
+                <p>Tổng tiền:</p>
+                <span>{getTotalSum()} đ</span>
+              </div>
+              <button>Đặt hàng</button>
+            </div>
           </div>
-        ))}
-      </div>
-
-      <div>Total Cost: {getTotalSum()} đ</div>
-    </>
+        </div>
+      )}
+    </div>
   );
 }

@@ -11,7 +11,6 @@ import { defineLordIconElement } from "lord-icon-element";
 import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./styles/style.css";
 import logo from "./images/logo.png";
-import footerImg from "./images/footer.png";
 defineLordIconElement(loadAnimation);
 const PAGE_HOME = "home";
 const PAGE_VEST = "vest";
@@ -22,20 +21,6 @@ const PAGE_TROUSERS = "trousers";
 const PAGE_CART = "cart";
 export default function Controller() {
   const [cart, setCart] = useState([]);
-  const addToCart = (product) => {
-    let newCart = [...cart];
-    let itemInCart = newCart.find((item) => product.name === item.name);
-    if (itemInCart) {
-      itemInCart.quantity++;
-    } else {
-      itemInCart = {
-        ...product,
-        quantity: 1,
-      };
-      newCart.push(itemInCart);
-    }
-    setCart(newCart);
-  };
   const [page, setPage] = useState(PAGE_HOME);
   const nextPage = (pages) => setPage(pages);
   const aboutLoza = [
@@ -160,7 +145,11 @@ export default function Controller() {
         {page === PAGE_HOME && <Home />}
         {page === PAGE_SKIRT && <Skirt />}
         {page === PAGE_SHIRT && (
-          <Shirt cart={cart} setCart={setCart} addToCart={addToCart} />
+          <Shirt
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
         )}
         {page === PAGE_TROUSERS && <Trousers />}
         {page === PAGE_VEST && <Vest />}
@@ -169,7 +158,7 @@ export default function Controller() {
           <Cart
             cart={cart}
             setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
+            onClick={() => nextPage(PAGE_SHIRT)}
           />
         )}
       </div>

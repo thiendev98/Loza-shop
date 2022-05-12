@@ -5,7 +5,7 @@
 }
 #CartPage {
   .cart__empty {
-    min-height: 350px;
+    min-height: 364px;
     @include centerItem();
     flex-direction: column;
     &--img {
@@ -30,7 +30,7 @@
     }
   }
   .cart__products {
-    min-height: 350px;
+    min-height: 364px;
     header {
       margin-left: 12px;
       span {
@@ -116,10 +116,13 @@
       }
       .payment--title {
         @include centerItem();
+        flex-direction: column;
+        min-height: 140px;
         p {
           margin: 0;
           padding: 0;
-          font-size: 13px;
+          font-size: 16px;
+          text-align: center;
         }
       }
       .payment--total {

@@ -45,7 +45,7 @@ const ShirtList = [
     name: "Áo phông nữ phom rộng in hình I can & I will",
     price: 240000,
     link: [ican1, ican2],
-    color: ["Đen", "Trắng"],
+    color: ["Trắng", "Đen"],
     size: ["S", "M", "L"],
   },
   {

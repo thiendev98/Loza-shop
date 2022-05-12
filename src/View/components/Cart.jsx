@@ -27,7 +27,6 @@ export default function Cart({ cart, setCart, onClick }) {
   const removeFromCart = (productToRemove) => {
     setCart(cart.filter((product) => product !== productToRemove));
   };
-
   return (
     <div id="CartPage">
       {cart.length === 0 && (
@@ -61,13 +60,13 @@ export default function Cart({ cart, setCart, onClick }) {
                   key={idx}
                 >
                   <div className="col-xl-6 row container-fluid">
-                    <img className="col-xl-2" src={product.link[0]} />
+                    <img className="col-xl-2" src={product.link} />
                     <div className="col-xl-10">
                       <p className="cart__products--item__name">
                         {product.name}
                       </p>
                       <div className="cart__products--item__size">
-                        <span>{product.size}</span>{" "}
+                        <span>{`${product.color} / ${product.size}`}</span>
                       </div>
                       <button
                         className="btn--remove"
@@ -106,18 +105,20 @@ export default function Cart({ cart, setCart, onClick }) {
               ))}
             </div>
             <div className="cart__products--payment col-xl-3">
-              <div className="payment--title row container-fluid">
-                <div className="col-xl-4">
-                  <lord-icon
-                    className="icon__truck--kun"
-                    trigger="loop"
-                    src="https://cdn.lordicon.com/uetqnvvg.json"
-                  ></lord-icon>
-                </div>
-                <div className="col-xl-8">
-                  <p>Miễn phí giao hàng</p>
-                  <p>Giao hàng siêu tốc</p>
-                </div>
+              <div className="payment--title">
+                <lord-icon
+                  className="icon__truck--kun"
+                  trigger="loop"
+                  src="https://cdn.lordicon.com/uetqnvvg.json"
+                ></lord-icon>
+                <p>Giao hàng siêu tốc</p>
+                <p>
+                  {getTotalSum() >= 498000
+                    ? "Miễn phí giao hàng"
+                    : `Mua thêm ${
+                        498000 - getTotalSum()
+                      }đ để được miễn phí giao hàng`}
+                </p>
               </div>
               <div className="payment--total">
                 <p>Tổng tiền:</p>

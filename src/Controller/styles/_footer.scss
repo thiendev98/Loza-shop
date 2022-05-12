@@ -1,11 +1,12 @@
 #footer {
-  padding-bottom: 12px;
   font-size: 14px;
+  background-color: #f8f8f8;
   .row {
     margin: 0;
     padding: 0;
   }
   .footer {
+    padding: 12px 0;
     &__logo {
       p {
         margin-bottom: 0.6rem;

@@ -344,7 +344,7 @@
 #ProductPage .product__content .content--item {
   -ms-flex-preferred-size: 18%;
       flex-basis: 18%;
-  padding: 12px 0;
+  padding-bottom: 18px;
   overflow: hidden;
 }
 

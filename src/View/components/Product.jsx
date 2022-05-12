@@ -177,7 +177,7 @@ export default function Product({
   return (
     <div id="ProductPage">
       <div className="product__header">
-        <span>Trang chủ </span> /
+        <span onClick={() => setPage("home")}>Trang chủ </span> /
         <span onClick={() => returnPage()}> {value}</span>
       </div>
       <ul className="product__content">

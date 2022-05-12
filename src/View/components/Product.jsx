@@ -1,12 +1,17 @@
 import "../styles/style.css";
-import ShirtList from "../ShirtList";
 import $ from "jquery";
 import { FaTimes } from "react-icons/fa";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import { useState, useRef } from "react";
 defineLordIconElement(loadAnimation);
-export default function Shirt({ setCart, cart, onClick }) {
+export default function Product({
+  setCart,
+  cart,
+  onClick,
+  ProductList,
+  value,
+}) {
   const [current, setCurrent] = useState(0);
   const [detail, setDetail] = useState(false);
   const [position, setPosition] = useState(0);
@@ -15,6 +20,7 @@ export default function Shirt({ setCart, cart, onClick }) {
   const [about, setAbout] = useState(0);
   const myRefImage = useRef();
   const myRefSize = useRef();
+
   const handleClick = (index) => {
     setCurrent(index);
     setDetail(true);
@@ -131,14 +137,17 @@ export default function Shirt({ setCart, cart, onClick }) {
   };
 
   return (
-    <div id="ShirtPage">
-      <div className="shirt__header">
-        <span onClick={onClick}>Trang chủ </span>/
-        <span onClick={() => returnPage()}> Áo phông nữ</span>
-      </div>
-
-      <ul className="shirt__content">
-        {ShirtList.map((shirt, index) => {
+    <div id="ProductPage">
+      {value === "Home" ? (
+        ""
+      ) : (
+        <div className="product__header">
+          <span onClick={onClick}>Trang chủ </span> /
+          <span onClick={() => returnPage()}> {value}</span>
+        </div>
+      )}
+      <ul className="product__content">
+        {ProductList.map((product, index) => {
           return (
             <>
               {current === 0 && detail === false && (
@@ -146,18 +155,18 @@ export default function Shirt({ setCart, cart, onClick }) {
                   <div className="item__list">
                     <img
                       className="list__img"
-                      src={shirt.link[0]}
+                      src={product.link[0]}
                       onClick={() => handleClick(index)}
                     />
                     <img
                       className="list__img--hover"
-                      src={shirt.link[1]}
+                      src={product.link[1]}
                       onClick={() => handleClick(index)}
                     />
                   </div>
-                  <p onClick={() => handleClick(index)}>{shirt.name}</p>
+                  <p onClick={() => handleClick(index)}>{product.name}</p>
                   <span onClick={() => handleClick(index)}>
-                    {shirt.price} đ
+                    {product.price} đ
                   </span>
                 </li>
               )}
@@ -165,18 +174,18 @@ export default function Shirt({ setCart, cart, onClick }) {
                 <li className="detail--item">
                   <div className="row container-fluid">
                     <div className="col-xl-6 detail__img">
-                      <img className="item--img" src={shirt.link[position]} />
+                      <img className="item--img" src={product.link[position]} />
                     </div>
 
                     <div className="col-xl-6 detail__info">
-                      <h3>{shirt.name}</h3>
-                      <p className="detail__info--code">Mã : {shirt.code}</p>
-                      <p className="detail__info--price">{shirt.price} đ</p>
+                      <h3>{product.name}</h3>
+                      <p className="detail__info--code">Mã : {product.code}</p>
+                      <p className="detail__info--price">{product.price} đ</p>
                       <p className="detail__info--color">
-                        Màu: <span>{shirt.color[color]}</span>
+                        Màu: <span>{product.color[color]}</span>
                       </p>
                       <div className="row container-fluid" ref={myRefImage}>
-                        {shirt.link.map((img, i) => (
+                        {product.link.map((img, i) => (
                           <>
                             <img
                               className="col-xl-3 detail__info--img"
@@ -187,10 +196,10 @@ export default function Shirt({ setCart, cart, onClick }) {
                         ))}
                       </div>
                       <p className="detail__info--size">
-                        Size: <span>{shirt.size[size]}</span>
+                        Size: <span>{product.size[size]}</span>
                       </p>
                       <ul className="detail__info--size__list" ref={myRefSize}>
-                        {shirt.size.map((s, i) => (
+                        {product.size.map((s, i) => (
                           <li
                             className="item--size"
                             onClick={() => handleClickSize(i)}
@@ -202,7 +211,7 @@ export default function Shirt({ setCart, cart, onClick }) {
                       <div className="detail__info--button row container-fluid">
                         <button
                           className="col-xl-6 btn--add__cart"
-                          onClick={() => addToCart(shirt)}
+                          onClick={() => addToCart(product)}
                         >
                           Thêm vào giỏ hàng
                         </button>

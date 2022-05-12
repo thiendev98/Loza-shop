@@ -2,7 +2,9 @@ import "../styles/style.css";
 import Slider from "react-slick";
 import background1 from "../images/background1.jpeg";
 import background2 from "../images/background2.jpeg";
-export default function Home() {
+import HomeList from "../HomeList";
+import Product from "./Product";
+export default function Home({ cart, setCart, onClick }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -25,6 +27,13 @@ export default function Home() {
       </div>
       <div className="container">
         <h3>Mua gì hôm nay?</h3>
+        <Product
+          cart={cart}
+          setCart={setCart}
+          onClick={onClick}
+          ProductList={HomeList}
+          value="Home"
+        />
       </div>
     </div>
   );

@@ -1,5 +1,16 @@
 import React from "react";
-
-export default function Vest() {
-  return <div>Vest</div>;
+import VestList from "../VestList";
+import Product from "./Product";
+export default function Vest({ key, cart, setCart, onClick }) {
+  return (
+    <div className="TrousersPage">
+      <Product
+        cart={cart}
+        setCart={setCart}
+        onClick={onClick}
+        ProductList={VestList}
+        value="Vest"
+      />
+    </div>
+  );
 }

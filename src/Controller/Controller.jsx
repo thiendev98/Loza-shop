@@ -142,8 +142,20 @@ export default function Controller() {
       </div>
       {/*  */}
       <div id="content--controller">
-        {page === PAGE_HOME && <Home />}
-        {page === PAGE_SKIRT && <Skirt />}
+        {page === PAGE_HOME && (
+          <Home
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
+        )}
+        {page === PAGE_SKIRT && (
+          <Skirt
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
+        )}
         {page === PAGE_SHIRT && (
           <Shirt
             cart={cart}
@@ -151,9 +163,27 @@ export default function Controller() {
             onClick={() => nextPage(PAGE_HOME)}
           />
         )}
-        {page === PAGE_TROUSERS && <Trousers />}
-        {page === PAGE_VEST && <Vest />}
-        {page === PAGE_TSHIRT && <TShirt />}
+        {page === PAGE_TROUSERS && (
+          <Trousers
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
+        )}
+        {page === PAGE_VEST && (
+          <Vest
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
+        )}
+        {page === PAGE_TSHIRT && (
+          <TShirt
+            cart={cart}
+            setCart={setCart}
+            onClick={() => nextPage(PAGE_HOME)}
+          />
+        )}
         {page === PAGE_CART && (
           <Cart
             cart={cart}

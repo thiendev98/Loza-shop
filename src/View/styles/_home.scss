@@ -1,3 +1,8 @@
+@mixin centerItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #HomePage {
   overflow: hidden;
   .slick-dots li button {
@@ -15,6 +20,64 @@
       font-size: 18px;
       text-transform: uppercase;
       text-align: center;
+    }
+  }
+  .home__content {
+    ul,
+    li {
+      padding: 0;
+    }
+    .row {
+      margin: 0;
+    }
+    padding: 12px 0;
+    overflow: hidden;
+    &--item {
+      @include centerItem();
+      flex-direction: column;
+      margin: 10px 0;
+      p {
+        width: 228px;
+        margin: 6px;
+        padding: 0;
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-transform: capitalize;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      span {
+        width: 228px;
+        margin: 0 6px;
+        font-size: 16px;
+        cursor: pointer;
+        color: #f08522;
+      }
+      .item__list {
+        position: relative;
+        object-fit: contain;
+        .list__img {
+          height: 304px;
+          width: 228px;
+          cursor: pointer;
+        }
+      }
+      .list__img--hover {
+        position: absolute;
+        height: 304px;
+        width: 228px;
+        left: 0;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        transition: all 0.8s ease-in;
+        opacity: 0;
+      }
+      .item__list:hover .list__img--hover {
+        opacity: 1;
+      }
     }
   }
 }

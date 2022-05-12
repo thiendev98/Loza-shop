@@ -1,0 +1,384 @@
+#LoginPage {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+#LoginPage .form--login {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  max-width: 600px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#LoginPage .form--login .icon__cancel {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#LoginPage .form--login li {
+  margin: 12px 0;
+}
+
+#LoginPage .form--login li span {
+  cursor: pointer;
+}
+
+#LoginPage .form--login h4 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#LoginPage .form--login .form--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 6px 0;
+}
+
+#LoginPage .form--login .form--item label {
+  float: left;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#LoginPage .form--login .form--item input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+}
+
+#LoginPage .form--login .button--login {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 12px 0;
+  vertical-align: middle;
+  background-color: #1b1a1a;
+  border: 1px solid #ddd;
+  color: #fff;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#LoginPage .form--login .button--login .row {
+  padding: 0;
+}
+
+#LoginPage .form--login .button--login:hover {
+  -webkit-transform: translate3d(0, -1px, 1px);
+          transform: translate3d(0, -1px, 1px);
+  background-color: #d9d9d9;
+  color: #000;
+}
+
+#LoginPage .form--login .button--login__gg {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 12px 0;
+  vertical-align: middle;
+  background: #e5e5e5;
+  border: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#LoginPage .form--login .button--login__gg .icon__gg {
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+}
+
+#LoginPage .form--login .form--login__select {
+  padding: 8px 0;
+  position: relative;
+  color: #ccc;
+  text-align: center;
+}
+
+#LoginPage .form--login .form--login__select::before {
+  background-color: #e5e5e5;
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 45%;
+  height: 1px;
+  top: 47%;
+}
+
+#LoginPage .form--login .form--login__select::after {
+  right: 0;
+  position: absolute;
+  background: #e5e5e5;
+  content: "";
+  width: 45%;
+  height: 1px;
+  top: 47%;
+}
+
+#LoginPage .form--register {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  max-width: 600px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#LoginPage .form--register .icon__cancel {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#LoginPage .form--register h4 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#LoginPage .form--register .form--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 6px 0;
+}
+
+#LoginPage .form--register .form--item label {
+  float: left;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#LoginPage .form--register .form--item input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+}
+
+#LoginPage .form--register .button--register {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 12px 0;
+  vertical-align: middle;
+  background-color: #1b1a1a;
+  border: 1px solid #ddd;
+  color: #fff;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#LoginPage .form--register .button--register:hover {
+  -webkit-transform: translate3d(0, -1px, 1px);
+          transform: translate3d(0, -1px, 1px);
+  background-color: #d9d9d9;
+  color: #000;
+}
+
+#LoginPage .form--register p {
+  padding-top: 6px;
+  text-align: center;
+}
+
+#LoginPage .form--register p span {
+  cursor: pointer;
+}
+
+#UserPage {
+  min-height: 520px;
+  background-color: #f8f8f8;
+}
+
+#UserPage .row {
+  margin: 0;
+}
+
+#UserPage .user__header {
+  height: 100px;
+}
+
+#UserPage .user__header span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  line-height: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fcaf17;
+}
+
+#UserPage .user__content {
+  padding-bottom: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#UserPage .user__content--list {
+  margin-right: 24px;
+  background-color: #fff;
+  min-height: 480px;
+  padding: 12px;
+}
+
+#UserPage .user__content--list__img {
+  margin: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#UserPage .user__content--list__img .list__img--avatar {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin: 6px 0;
+}
+
+#UserPage .user__content--list__img p {
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+#UserPage .user__content--list__img button {
+  width: 100%;
+  border-radius: 8px;
+  height: 28px;
+  border: 1px solid #fff;
+  font-size: 14px;
+  background-color: #fcaf17;
+  color: #fff;
+  text-align: center;
+}
+
+#UserPage .user__content--list__info li {
+  margin-left: 18px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#UserPage .user__content--list__info li img {
+  margin-right: 8px;
+}
+
+#UserPage .user__content--list__info li span {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#UserPage .user__content--list__info span:hover {
+  color: #fcaf17;
+}
+
+#UserPage .user__content--detail {
+  background-color: #fff;
+  margin-left: 24px;
+  min-height: 480px;
+  padding: 8px 0;
+}
+
+#UserPage .user__content--detail__title {
+  border-bottom: 1px solid #dde1ef;
+  padding: 12px;
+}
+
+#UserPage .user__content--detail__title span {
+  font-size: 14px;
+  color: #fcaf17;
+}
+
+#UserPage .user__content--detail__content {
+  padding: 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */

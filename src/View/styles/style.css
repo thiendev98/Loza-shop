@@ -21,6 +21,87 @@
   text-align: center;
 }
 
+#HomePage .home__content {
+  padding: 12px 0;
+  overflow: hidden;
+}
+
+#HomePage .home__content ul,
+#HomePage .home__content li {
+  padding: 0;
+}
+
+#HomePage .home__content .row {
+  margin: 0;
+}
+
+#HomePage .home__content--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 0;
+}
+
+#HomePage .home__content--item p {
+  width: 228px;
+  margin: 6px;
+  padding: 0;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-transform: capitalize;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#HomePage .home__content--item span {
+  width: 228px;
+  margin: 0 6px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #f08522;
+}
+
+#HomePage .home__content--item .item__list {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#HomePage .home__content--item .item__list .list__img {
+  height: 304px;
+  width: 228px;
+  cursor: pointer;
+}
+
+#HomePage .home__content--item .list__img--hover {
+  position: absolute;
+  height: 304px;
+  width: 228px;
+  left: 0;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in;
+  opacity: 0;
+}
+
+#HomePage .home__content--item .item__list:hover .list__img--hover {
+  opacity: 1;
+}
+
 #CartPage .cart__empty {
   min-height: 364px;
   display: -webkit-box;

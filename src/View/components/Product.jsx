@@ -8,8 +8,9 @@ defineLordIconElement(loadAnimation);
 export default function Product({
   setCart,
   cart,
-  onClick,
+  setPage,
   ProductList,
+  user,
   value,
 }) {
   const [current, setCurrent] = useState(0);
@@ -30,34 +31,71 @@ export default function Product({
     setDetail(false);
   };
   const addToCart = (product) => {
-    var products = {
-      code: product.code,
-      name: product.name,
-      price: product.price,
-      link: product.link[position],
-      color: product.color[color],
-      size: product.size[size],
-    };
-    if (size === 99) alert("Bạn vui lòng chọn size trước khi đặt hàng");
+    if (user === false) alert("Bạn cần đăng nhập để mua hàng!!!");
     else {
-      let newCart = [...cart];
-      let itemInCart = newCart.find(
-        (item) =>
-          products.code === item.code &&
-          products.size === item.size &&
-          products.color === item.color
-      );
-      if (itemInCart) {
-        alert("Bạn đã thêm sản phẩm này vào giỏ hàng");
-      } else {
-        itemInCart = {
-          ...products,
-          quantity: 1,
-        };
-        newCart.push(itemInCart);
-        alert("Bạn vừa thêm thành công sản phẩm vào giỏ hàng");
+      var products = {
+        code: product.code,
+        name: product.name,
+        price: product.price,
+        link: product.link[position],
+        color: product.color[color],
+        size: product.size[size],
+      };
+      if (size === 99) alert("Bạn vui lòng chọn size trước khi đặt hàng");
+      else {
+        let newCart = [...cart];
+        let itemInCart = newCart.find(
+          (item) =>
+            products.code === item.code &&
+            products.size === item.size &&
+            products.color === item.color
+        );
+        if (itemInCart) {
+          alert("Bạn đã thêm sản phẩm này vào giỏ hàng");
+        } else {
+          itemInCart = {
+            ...products,
+            quantity: 1,
+          };
+          newCart.push(itemInCart);
+          alert("Bạn vừa thêm thành công sản phẩm vào giỏ hàng");
+        }
+        setCart(newCart);
       }
-      setCart(newCart);
+    }
+  };
+  const goToCart = (product) => {
+    if (user === false) {
+      alert("Bạn cần đăng nhập để mua hàng!!!");
+    } else {
+      var products = {
+        code: product.code,
+        name: product.name,
+        price: product.price,
+        link: product.link[position],
+        color: product.color[color],
+        size: product.size[size],
+      };
+      if (size === 99) alert("Bạn vui lòng chọn size trước khi đặt hàng");
+      else {
+        let newCart = [...cart];
+        let itemInCart = newCart.find(
+          (item) =>
+            products.code === item.code &&
+            products.size === item.size &&
+            products.color === item.color
+        );
+        if (itemInCart) {
+        } else {
+          itemInCart = {
+            ...products,
+            quantity: 1,
+          };
+          newCart.push(itemInCart);
+        }
+        setCart(newCart);
+        setPage("cart");
+      }
     }
   };
   const listContent = [
@@ -138,14 +176,10 @@ export default function Product({
 
   return (
     <div id="ProductPage">
-      {value === "Home" ? (
-        ""
-      ) : (
-        <div className="product__header">
-          <span onClick={onClick}>Trang chủ </span> /
-          <span onClick={() => returnPage()}> {value}</span>
-        </div>
-      )}
+      <div className="product__header">
+        <span>Trang chủ </span> /
+        <span onClick={() => returnPage()}> {value}</span>
+      </div>
       <ul className="product__content">
         {ProductList.map((product, index) => {
           return (
@@ -215,7 +249,10 @@ export default function Product({
                         >
                           Thêm vào giỏ hàng
                         </button>
-                        <button className="col-xl-6 btn--buy__now">
+                        <button
+                          className="col-xl-6 btn--buy__now"
+                          onClick={() => goToCart(product)}
+                        >
                           Mua ngay
                         </button>
                       </div>

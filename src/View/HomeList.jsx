@@ -33,6 +33,13 @@ import only1 from "../Modal/Shirt/only1.jpg";
 import only2 from "../Modal/Shirt/only2.jpg";
 import pickme1 from "../Modal/Shirt/pickme1.jpg";
 import pickme2 from "../Modal/Shirt/pickme2.jpg";
+import silkneck from "../Modal/TShirt/silkneck.jpg";
+import whitebowneck from "../Modal/TShirt/whitebowneck.jpg";
+import bowtieflowers from "../Modal/TShirt/bowtieflowers.jpg";
+import blacklead from "../Modal/Skirt/blacklead.jpg";
+import crossflap from "../Modal/Skirt/crossflap.jpg";
+import fishtail from "../Modal/Skirt/fishtail.jpg";
+import pinchwaist from "../Modal/Skirt/pinchwaist.jpg";
 const HomeList = [
   {
     key: 1,
@@ -176,6 +183,69 @@ const HomeList = [
     price: 215000,
     link: [melon1, melon2],
     color: ["Xanh ngọc", "Xanh"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 17,
+    code: "LS041136XA",
+    name: "Áo sơ mi cổ nơ cách điệu",
+    price: 239000,
+    link: [whitebowneck],
+    color: ["Trắng"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 18,
+    code: "LS03106XA",
+    name: "Áo sơ mi hoa cổ nơ",
+    price: 239000,
+    link: [bowtieflowers],
+    color: ["Xanh"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 19,
+    code: "LS061065HO",
+    name: "Áo sơ mi lụa tay bồng",
+    price: 239000,
+    link: [silkneck],
+    color: ["Hồng"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 20,
+    code: "LC071005DE",
+    name: "Chân váy ôm bút chì nhúm eo",
+    price: 350000,
+    link: [pinchwaist],
+    color: ["Đen"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 21,
+    code: "LC061006TT",
+    name: "Chân váy ôm đuôi cá",
+    price: 199000,
+    link: [fishtail],
+    color: ["Tím than"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 22,
+    code: "LC03105KE",
+    name: "Chân váy kẻ vạt chéo",
+    price: 199000,
+    link: [crossflap],
+    color: ["Kẻ nhỏ"],
+    size: ["S", "M", "L"],
+  },
+  {
+    key: 23,
+    code: "LC12012DE",
+    name: "Chân váy kẻ đen",
+    price: 199000,
+    link: [blacklead],
+    color: ["Đen"],
     size: ["S", "M", "L"],
   },
 ];

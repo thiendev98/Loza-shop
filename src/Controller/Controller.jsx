@@ -1,4 +1,5 @@
 import { useState } from "react";
+import $ from "jquery";
 import Home from "../View/components/Home";
 import TShirt from "../View/components/TShirt";
 import Shirt from "../View/components/Shirt";
@@ -6,6 +7,8 @@ import Skirt from "../View/components/Skirt";
 import Vest from "../View/components/Vest";
 import Cart from "../View/components/Cart";
 import Trousers from "../View/components/Trousers";
+import Login from "../View/pages/User/Login";
+import User from "../View/pages/User/User";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -22,7 +25,11 @@ const PAGE_CART = "cart";
 export default function Controller() {
   const [cart, setCart] = useState([]);
   const [page, setPage] = useState(PAGE_HOME);
+  const [user, setUser] = useState(true);
   const nextPage = (pages) => setPage(pages);
+  const handleLogin = () => {
+    $("#LoginPage").css("display", "block");
+  };
   const aboutLoza = [
     {
       title: "aboutLoza",
@@ -125,9 +132,15 @@ export default function Controller() {
           <ul className="navbar__user col-xl-1">
             <li className="user--customer">
               <lord-icon
+                onClick={
+                  user === true
+                    ? () => setPage("userInformation")
+                    : () => handleLogin()
+                }
                 trigger="hover"
                 src="https://cdn.lordicon.com/dxjqoygy.json"
               ></lord-icon>
+              <Login />
             </li>
             <li className="user--cart">
               <lord-icon
@@ -142,55 +155,31 @@ export default function Controller() {
       </div>
       {/*  */}
       <div id="content--controller">
-        {page === PAGE_HOME && (
-          <Home
-            cart={cart}
-            setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
-          />
-        )}
+        {page === PAGE_HOME && <Home setPage={setPage} />}
         {page === PAGE_SKIRT && (
-          <Skirt
-            cart={cart}
-            setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
-          />
+          <Skirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
         )}
         {page === PAGE_SHIRT && (
-          <Shirt
-            cart={cart}
-            setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
-          />
+          <Shirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
         )}
         {page === PAGE_TROUSERS && (
           <Trousers
             cart={cart}
             setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
+            setPage={setPage}
+            user={user}
           />
         )}
         {page === PAGE_VEST && (
-          <Vest
-            cart={cart}
-            setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
-          />
+          <Vest cart={cart} setCart={setCart} setPage={setPage} user={user} />
         )}
         {page === PAGE_TSHIRT && (
-          <TShirt
-            cart={cart}
-            setCart={setCart}
-            onClick={() => nextPage(PAGE_HOME)}
-          />
+          <TShirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
         )}
         {page === PAGE_CART && (
-          <Cart
-            cart={cart}
-            setCart={setCart}
-            onClick={() => nextPage(PAGE_SHIRT)}
-          />
+          <Cart cart={cart} setCart={setCart} setPage={setPage} user={user} />
         )}
+        {page === "userInformation" && <User />}
       </div>
       {/*  */}
       <div id="footer">

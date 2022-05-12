@@ -1,14 +1,15 @@
 import React from "react";
 import VestList from "../VestList";
 import Product from "./Product";
-export default function Vest({ key, cart, setCart, onClick }) {
+export default function Vest({ key, cart, setCart, setPage, user }) {
   return (
-    <div className="TrousersPage">
+    <div id="TrousersPage">
       <Product
         cart={cart}
         setCart={setCart}
-        onClick={onClick}
+        setPage={setPage}
         ProductList={VestList}
+        user={user}
         value="Vest"
       />
     </div>

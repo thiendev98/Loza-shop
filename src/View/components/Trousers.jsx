@@ -1,14 +1,15 @@
 import React from "react";
 import TrousersList from "../TrousersList";
 import Product from "./Product";
-export default function Trousers({ key, cart, setCart, onClick }) {
+export default function Trousers({ key, cart, setCart, setPage, user }) {
   return (
-    <div className="TrousersPage">
+    <div id="TrousersPage">
       <Product
         cart={cart}
         setCart={setCart}
-        onClick={onClick}
+        setPage={setPage}
         ProductList={TrousersList}
+        user={user}
         value="Quần nữ"
       />
     </div>

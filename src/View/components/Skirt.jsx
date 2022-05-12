@@ -1,13 +1,14 @@
 import SkirtList from "../SkirtList";
 import Product from "./Product";
-export default function Skirt({ key, cart, setCart, onClick }) {
+export default function Skirt({ key, cart, setCart, setPage, user }) {
   return (
-    <div className="ShirtPage">
+    <div id="ShirtPage">
       <Product
         cart={cart}
         setCart={setCart}
-        onClick={onClick}
+        setPage={setPage}
         ProductList={SkirtList}
+        user={user}
         value="Váy nữ"
       />
     </div>

@@ -4,30 +4,52 @@ import $ from "jquery";
 import { FaGooglePlusG, FaTimes } from "react-icons/fa";
 export default function Login({ user, setUser, setPage, setAdmin }) {
   const [login, setLogin] = useState(true);
-  const adminUser = {
-    email: "admin",
-    password: "123456",
-  };
-  const customerUser = {
-    email: "customer",
-    password: "123456",
-  };
+  const adminUser = [
+    {
+      email: "admin",
+      password: "123456",
+    },
+    {
+      email: "lozashop",
+      password: "123456",
+    },
+  ];
+  const customerUser = [
+    {
+      email: "customer",
+      password: "123456",
+    },
+    {
+      email: "client",
+      password: "123456",
+    },
+  ];
   const [account, setAccount] = useState({ email: "", password: "" });
   const LoginAccount = () => {
-    if (
-      adminUser.email === account.email &&
-      adminUser.password === account.password
-    ) {
-      $("#LoginPage").css("display", "none");
-      setAdmin(true);
-    } else if (
-      customerUser.email === account.email &&
-      customerUser.password === account.password
-    ) {
-      $("#LoginPage").css("display", "none");
-      setUser(true);
-      setPage("home");
-    }
+    adminUser.forEach((admin) => {
+      if (
+        admin.email === account.email &&
+        admin.password === account.password
+      ) {
+        $("#LoginPage").css("display", "none");
+        setAdmin(true);
+      } else {
+        $(".form--warning").css("display", "flex");
+      }
+    });
+    customerUser.forEach((customer) => {
+      console.log(customer);
+      if (
+        customer.email === account.email &&
+        customer.password === account.password
+      ) {
+        $("#LoginPage").css("display", "none");
+        setUser(true);
+        setPage("home");
+      } else {
+        $(".form--warning").css("display", "flex");
+      }
+    });
   };
   return (
     <div id="LoginPage">
@@ -42,6 +64,9 @@ export default function Login({ user, setUser, setPage, setAdmin }) {
               }}
             />
             <h4>Đăng nhập</h4>
+            <span className="form--warning">
+              Email hoặc mật khẩu không chính xác
+            </span>
             <div className="form--item">
               <label>SĐT / Email</label>
               <input

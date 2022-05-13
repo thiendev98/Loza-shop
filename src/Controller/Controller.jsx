@@ -32,7 +32,8 @@ export default function Controller({ setAdmin }) {
   const handleLogin = () => {
     user === true
       ? setPage("userInformation")
-      : $("#LoginPage").css("display", "block");
+      : $("#LoginPage").css("display", "block") &&
+        $(".form--warning").css("display", "none");
   };
   const aboutLoza = [
     {
@@ -216,7 +217,13 @@ export default function Controller({ setAdmin }) {
           />
         )}
         {page === "userInformation" && (
-          <User user={user} setUser={setUser} setPage={setPage} />
+          <User
+            user={user}
+            setUser={setUser}
+            setPage={setPage}
+            cart={cart}
+            setCart={setCart}
+          />
         )}
       </div>
       {/*  */}

@@ -41,6 +41,12 @@
       text-transform: uppercase;
       text-align: center;
     }
+    .form--warning {
+      color: red;
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
     .form--item {
       display: flex;
       flex-direction: column;

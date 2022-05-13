@@ -32,6 +32,7 @@ import yellowdaisy2 from "../Modal/Shirt/yellowdaisy2.jpg";
 const ShirtList = [
   {
     key: 1,
+    type: "shirt",
     code: "PT302033",
     name: "Áo phông nữ phom rộng in hình SENITO",
     price: 240000,
@@ -41,6 +42,7 @@ const ShirtList = [
   },
   {
     key: 2,
+    type: "shirt",
     code: "PT302037",
     name: "Áo phông nữ phom rộng in hình I can & I will",
     price: 240000,
@@ -50,6 +52,7 @@ const ShirtList = [
   },
   {
     key: 3,
+    type: "shirt",
     code: "PT302018",
     name: "Áo phông nữ phom rộng in hình Monsterpiece",
     price: 245000,
@@ -59,6 +62,7 @@ const ShirtList = [
   },
   {
     key: 4,
+    type: "shirt",
     code: "PT402038",
     name: "Áo phông nữ phom rộng in hình gấu PICK ME",
     price: 245000,
@@ -69,6 +73,7 @@ const ShirtList = [
   {
     key: 5,
     code: "PT402046",
+    type: "shirt",
     name: "Áo phông nữ in hình tim",
     price: 210000,
     link: [heart1, heart2],
@@ -77,6 +82,7 @@ const ShirtList = [
   },
   {
     key: 6,
+    type: "shirt",
     code: "PT402045",
     name: "Áo phông nữ in hình họa tiết",
     price: 225000,
@@ -86,6 +92,7 @@ const ShirtList = [
   },
   {
     key: 7,
+    type: "shirt",
     code: "PT402035",
     name: "Áo phông nữ phom rộng in hình thỏ",
     price: 245000,
@@ -95,6 +102,7 @@ const ShirtList = [
   },
   {
     key: 8,
+    type: "shirt",
     code: "PT302024",
     name: "Áo phông nữ in chữ Happiness",
     price: 205000,
@@ -104,6 +112,7 @@ const ShirtList = [
   },
   {
     key: 9,
+    type: "shirt",
     code: "PT302027",
     name: "Áo phông nữ in hình lá",
     price: 220000,
@@ -113,6 +122,7 @@ const ShirtList = [
   },
   {
     key: 10,
+    type: "shirt",
     code: "PT402050",
     name: "Áo phông nữ in hình dưa hấu",
     price: 215000,
@@ -122,6 +132,7 @@ const ShirtList = [
   },
   {
     key: 11,
+    type: "shirt",
     code: "PT502062",
     name: "Áo phông nữ in hình gấu nâu",
     price: 225000,
@@ -131,6 +142,7 @@ const ShirtList = [
   },
   {
     key: 12,
+    type: "shirt",
     code: "PT302021",
     name: "Áo phông nữ phom rộng in hình",
     price: 250000,
@@ -140,6 +152,7 @@ const ShirtList = [
   },
   {
     key: 13,
+    type: "shirt",
     code: "PT302019",
     name: "Áo phông nữ phom rộng in hình tim",
     price: 250000,
@@ -149,6 +162,7 @@ const ShirtList = [
   },
   {
     key: 14,
+    type: "shirt",
     code: "PT302012",
     name: "Áo phông nữ in hình hoa cúc",
     price: 220000,

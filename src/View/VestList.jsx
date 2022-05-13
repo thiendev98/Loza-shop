@@ -16,6 +16,7 @@ import orangevest3 from "../Modal/Vest/orangevest3.jpg";
 const VestList = [
   {
     key: 1,
+    type: "vest",
     code: "LV111008CA",
     name: "Áo Blazer phong cách Hàn Quốc màu cam",
     price: 399000,
@@ -25,6 +26,7 @@ const VestList = [
   },
   {
     key: 2,
+    type: "vest",
     code: "LV111008NA",
     name: "Áo Blazer phong cách Hàn Quốc màu nâu",
     price: 399000,
@@ -34,6 +36,7 @@ const VestList = [
   },
   {
     key: 3,
+    type: "vest",
     code: "LV101008DE",
     name: "Áo Blazer phong cách Hàn Quốc màu đen",
     price: 499000,
@@ -43,6 +46,7 @@ const VestList = [
   },
   {
     key: 4,
+    type: "vest",
     code: "LV111008BE",
     name: "Áo Blazer phong cách Hàn Quốc màu Be",
     price: 399000,
@@ -52,6 +56,7 @@ const VestList = [
   },
   {
     key: 5,
+    type: "vest",
     code: "LV101008CA",
     name: "Bộ vest phong cách Hàn Quốc màu cam",
     price: 499000,

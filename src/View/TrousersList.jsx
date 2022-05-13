@@ -12,6 +12,7 @@ import shortpleated2 from "../Modal/Trousers/short_pleated2.jpg";
 const TrousersList = [
   {
     key: 1,
+    type: "trousers",
     code: "QJ302068DA ",
     name: "Quần jeans dáng suông màu xanh đậm",
     price: 399000,
@@ -21,6 +22,7 @@ const TrousersList = [
   },
   {
     key: 2,
+    type: "trousers",
     code: "QJ302068DA ",
     name: "Quần jeans dáng suông màu xanh nhạt",
     price: 399000,
@@ -30,6 +32,7 @@ const TrousersList = [
   },
   {
     key: 3,
+    type: "trousers",
     code: "LQ302001",
     name: "Quần short nữ xếp ly",
     price: 375000,
@@ -39,6 +42,7 @@ const TrousersList = [
   },
   {
     key: 4,
+    type: "trousers",
     code: "LQ302005",
     name: "Quần short nữ dáng suông",
     price: 375000,
@@ -48,6 +52,7 @@ const TrousersList = [
   },
   {
     key: 5,
+    type: "trousers",
     code: "LQ302002",
     name: "Quần short nữ hai cúc",
     price: 375000,
@@ -57,6 +62,7 @@ const TrousersList = [
   },
   {
     key: 6,
+    type: "trousers",
     code: "LQ302006",
     name: "Quần short nữ kẻ caro",
     price: 395000,

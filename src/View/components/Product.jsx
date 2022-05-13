@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import { useState, useRef } from "react";
+import { type } from "@testing-library/user-event/dist/type";
 defineLordIconElement(loadAnimation);
 export default function Product({
   setCart,
@@ -19,10 +20,56 @@ export default function Product({
   const [color, setColor] = useState(0);
   const [size, setSize] = useState(99);
   const [about, setAbout] = useState(0);
+  const [namePage, setNamePage] = useState(value);
   const myRefImage = useRef();
   const myRefSize = useRef();
+  const listContent = [
+    "<p>Bạn có thể thanh toán cho người giao hàng mà không cần chịu phí thu tiền hộ (COD).</p> <p>Tóm tắt chính sách giao hàng COD:</p><p>① Loza hỗ trợ được kiểm tra hàng trước khi thanh toán nhưng không mặc thử đồ</p><p>② Loza không gửi đơn hàng COD nếu bạn có đơn hàng khác sử dụng COD mà chưa nhận hàng</p><p>③ Người giao hàng (bưu tá) không phải là nhân viên của Loza, vui lòng liên hệ với Loza theo số hotline trên bì hàng để được hỗ trợ các vấn đề khác④ Sản phẩm đúng với hình ảnh và mô tả nhưng nếu không ưng ý hoặc vì lý do nào khác khiến bạn từ chối nhận hàng, vui lòng hỗ trợ Loza <b>30.000đ</b> cước phí vận chuyển chiều về qua nhân viên phát hàng, bởi thực tế giá trị cước phí Loza gửi hàng chiều đi và về lớn hơn 30k khá nhiều. Rất mong nhận được sự thông cảm! </p>",
 
-  const handleClick = (index) => {
+    "<p><b>① Chính sách đổi hàng:</b>  Loza hỗ trợ bạn đổi hàng trong vòng 10 ngày </p><p>Yêu cầu sản phẩm đổi:</p><p>1. Các sản phẩm nhận được trong vòng 10 ngày kể từ ngày giao hàng</p><p>2. Các sản phẩm gửi đổi phải chưa qua sử dụng, không bị hư hỏng, không có mùi cơ thể, mùi lạ (nước hoa, hoá chất giặt), còn đủ nhãn mác và túi nylon đựng hàng</p><p>3. Phí vận chuyển hàng đổi được hỗ trợ bởi Loza với chiều trả hàng đổi, bạn vui lòng thanh toán cước vận chuyển chiều gửi về kho của Loza. Với sản phẩm giảm giá trên 20% hoặc lần đổi hàng thứ 2 với cùng đơn hàng bạn sẽ phải trả cước phí vận chuyển 2 chiều.</p> <p><b>② Chính sách trả hàng:</b>  Loza hỗ trợ bạn trả hàng và hoàn tiền trong trường hợp sản phẩm bị lỗi sản xuất, hoặc nhân viên Loza đóng gói sai sản phẩm.</p><p>Rất mong bạn thông cảm và kiên trì chờ đợi các khâu xác nhận và xử lý hoàn tiền, bởi con người ai cũng có thể có lúc nhầm lẫn, chúng tôi luôn ý thức và hạn chế hết mức điều này xảy ra. </p>",
+
+    "<p>Loza đang miễn phí vận chuyển với các đơn hàng có Tổng giá trị thanh toán ≥ 498.000đ</p><p> *Các đơn hàng không đủ điều kiện miễn phí vận chuyển Loza có thể áp dụng phí cố định <b>30.000đ/đơn hàng</b>. Vui lòng đặt hàng và điền thông tin địa chỉ ở mục Thanh toán nhận để cập nhật chính xác về cước phí vận chuyển của đơn hàng.</p>",
+
+    "<p>Các khuyến mại mua nhiều giảm sâu đang áp dụng:</p><p>- Mua 2 áo phông giá ưu đãi từ 199k/c- Mua 2 áo quần short bất kỳ giá chỉ còn 299k/c </p><p> - Đơn hàng từ 500k giảm thêm 50k- Đơn hàng từ 1.000k giảm thêm 100k</p><p>- Đơn hàng từ 1.500k giảm thêm 150k</p><p>- Miễn phí vận chuyển cho đơn hàng từ 498k</p><p>*Bạn có thể mua 'chéo' 2 sản phẩm khác loại (vd: 1 áo phông + 1 quần short) để nhận ưu đãi tương tự.</p>",
+  ];
+  const listSevice = [
+    {
+      key: 1,
+      title: "Thanh toán khi nhận hàng",
+      text: "Được kiểm tra hàng trước",
+      img: "https://statics.pancake.vn/web-media/ef/25/e7/64/bcb41fe4a59e764ca4280e56df5d5199524c1ae239a710fb47527ee5.png",
+    },
+    {
+      key: 2,
+      title: "Đổi hàng 10 ngày",
+      text: "Nhấn để xem chính sách",
+      img: "https://statics.pancake.vn/web-media/da/6b/3d/bc/3426639dcb8260e5384d95025943173cb5ebb6327358e4b88a559313.png",
+    },
+    {
+      key: 3,
+      title: "Miễn phí vận chuyển",
+      text: "Đơn hàng từ 498k",
+      img: "https://statics.pancake.vn/web-media/9b/e9/3b/a7/d77af40cdd8d935ae1c579ae16e1fcb0b12654f469e18bac5ef05cc6.png",
+    },
+    {
+      key: 4,
+      title: "Mua nhiều giảm sâu",
+      text: "Nhấn để xem chi tiết",
+      img: "https://statics.pancake.vn/web-media/67/35/4f/14/83d7cbdc34d02750b2704078bcf7711355e817d0780e97175417f041.png",
+    },
+  ];
+
+  //////
+  const handleSearchPage = (type) => {
+    $(".search__header").css("display", "none");
+    type === "shirt" && setNamePage("Áo phông nữ");
+    type === "tshirt" && setNamePage("Áo sơ mi nữ");
+    type === "trousers" && setNamePage("Quần nữ");
+    type === "vest" && setNamePage("Vest");
+    type === "skirt" && setNamePage("Váy nữ");
+  };
+  const handleClick = (index, type) => {
+    handleSearchPage(type);
     setCurrent(index);
     setDetail(true);
   };
@@ -98,41 +145,7 @@ export default function Product({
       }
     }
   };
-  const listContent = [
-    "<p>Bạn có thể thanh toán cho người giao hàng mà không cần chịu phí thu tiền hộ (COD).</p> <p>Tóm tắt chính sách giao hàng COD:</p><p>① Loza hỗ trợ được kiểm tra hàng trước khi thanh toán nhưng không mặc thử đồ</p><p>② Loza không gửi đơn hàng COD nếu bạn có đơn hàng khác sử dụng COD mà chưa nhận hàng</p><p>③ Người giao hàng (bưu tá) không phải là nhân viên của Loza, vui lòng liên hệ với Loza theo số hotline trên bì hàng để được hỗ trợ các vấn đề khác④ Sản phẩm đúng với hình ảnh và mô tả nhưng nếu không ưng ý hoặc vì lý do nào khác khiến bạn từ chối nhận hàng, vui lòng hỗ trợ Loza <b>30.000đ</b> cước phí vận chuyển chiều về qua nhân viên phát hàng, bởi thực tế giá trị cước phí Loza gửi hàng chiều đi và về lớn hơn 30k khá nhiều. Rất mong nhận được sự thông cảm! </p>",
 
-    "<p><b>① Chính sách đổi hàng:</b>  Loza hỗ trợ bạn đổi hàng trong vòng 10 ngày </p><p>Yêu cầu sản phẩm đổi:</p><p>1. Các sản phẩm nhận được trong vòng 10 ngày kể từ ngày giao hàng</p><p>2. Các sản phẩm gửi đổi phải chưa qua sử dụng, không bị hư hỏng, không có mùi cơ thể, mùi lạ (nước hoa, hoá chất giặt), còn đủ nhãn mác và túi nylon đựng hàng</p><p>3. Phí vận chuyển hàng đổi được hỗ trợ bởi Loza với chiều trả hàng đổi, bạn vui lòng thanh toán cước vận chuyển chiều gửi về kho của Loza. Với sản phẩm giảm giá trên 20% hoặc lần đổi hàng thứ 2 với cùng đơn hàng bạn sẽ phải trả cước phí vận chuyển 2 chiều.</p> <p><b>② Chính sách trả hàng:</b>  Loza hỗ trợ bạn trả hàng và hoàn tiền trong trường hợp sản phẩm bị lỗi sản xuất, hoặc nhân viên Loza đóng gói sai sản phẩm.</p><p>Rất mong bạn thông cảm và kiên trì chờ đợi các khâu xác nhận và xử lý hoàn tiền, bởi con người ai cũng có thể có lúc nhầm lẫn, chúng tôi luôn ý thức và hạn chế hết mức điều này xảy ra. </p>",
-
-    "<p>Loza đang miễn phí vận chuyển với các đơn hàng có Tổng giá trị thanh toán ≥ 498.000đ</p><p> *Các đơn hàng không đủ điều kiện miễn phí vận chuyển Loza có thể áp dụng phí cố định <b>30.000đ/đơn hàng</b>. Vui lòng đặt hàng và điền thông tin địa chỉ ở mục Thanh toán nhận để cập nhật chính xác về cước phí vận chuyển của đơn hàng.</p>",
-
-    "<p>Các khuyến mại mua nhiều giảm sâu đang áp dụng:</p><p>- Mua 2 áo phông giá ưu đãi từ 199k/c- Mua 2 áo quần short bất kỳ giá chỉ còn 299k/c </p><p> - Đơn hàng từ 500k giảm thêm 50k- Đơn hàng từ 1.000k giảm thêm 100k</p><p>- Đơn hàng từ 1.500k giảm thêm 150k</p><p>- Miễn phí vận chuyển cho đơn hàng từ 498k</p><p>*Bạn có thể mua 'chéo' 2 sản phẩm khác loại (vd: 1 áo phông + 1 quần short) để nhận ưu đãi tương tự.</p>",
-  ];
-  const listSevice = [
-    {
-      key: 1,
-      title: "Thanh toán khi nhận hàng",
-      text: "Được kiểm tra hàng trước",
-      img: "https://statics.pancake.vn/web-media/ef/25/e7/64/bcb41fe4a59e764ca4280e56df5d5199524c1ae239a710fb47527ee5.png",
-    },
-    {
-      key: 2,
-      title: "Đổi hàng 10 ngày",
-      text: "Nhấn để xem chính sách",
-      img: "https://statics.pancake.vn/web-media/da/6b/3d/bc/3426639dcb8260e5384d95025943173cb5ebb6327358e4b88a559313.png",
-    },
-    {
-      key: 3,
-      title: "Miễn phí vận chuyển",
-      text: "Đơn hàng từ 498k",
-      img: "https://statics.pancake.vn/web-media/9b/e9/3b/a7/d77af40cdd8d935ae1c579ae16e1fcb0b12654f469e18bac5ef05cc6.png",
-    },
-    {
-      key: 4,
-      title: "Mua nhiều giảm sâu",
-      text: "Nhấn để xem chi tiết",
-      img: "https://statics.pancake.vn/web-media/67/35/4f/14/83d7cbdc34d02750b2704078bcf7711355e817d0780e97175417f041.png",
-    },
-  ];
   const handleClickImages = (i) => {
     setPosition(i);
     setColor(i);
@@ -176,30 +189,36 @@ export default function Product({
 
   return (
     <div id="ProductPage">
-      <div className="product__header">
-        <span onClick={() => setPage("home")}>Trang chủ </span> /
-        <span onClick={() => returnPage()}> {value}</span>
-      </div>
-      <ul className="product__content">
+      {namePage === "search" && detail === false ? (
+        <div style={{ padding: "12px 0" }}></div>
+      ) : (
+        <div className="product__header">
+          <span onClick={() => setPage("home")}>Trang chủ </span> /
+          <span onClick={() => returnPage()}> {namePage}</span>
+        </div>
+      )}
+      <ul className="product__content row container-fluid">
         {ProductList.map((product, index) => {
           return (
             <>
               {current === 0 && detail === false && (
-                <li className="content--item">
+                <li className="col-xl-3 product__content--item">
                   <div className="item__list">
                     <img
                       className="list__img"
                       src={product.link[0]}
-                      onClick={() => handleClick(index)}
+                      onClick={() => handleClick(index, product.type)}
                     />
                     <img
                       className="list__img--hover"
                       src={product.link[1]}
-                      onClick={() => handleClick(index)}
+                      onClick={() => handleClick(index, product.type)}
                     />
                   </div>
-                  <p onClick={() => handleClick(index)}>{product.name}</p>
-                  <span onClick={() => handleClick(index)}>
+                  <p onClick={() => handleClick(index, product.type)}>
+                    {product.name}
+                  </p>
+                  <span onClick={() => handleClick(index, product.type)}>
                     {product.price} đ
                   </span>
                 </li>

@@ -9,6 +9,7 @@ import Cart from "../View/components/Cart";
 import Trousers from "../View/components/Trousers";
 import Login from "../View/pages/User/Login";
 import User from "../View/pages/User/User";
+import SearchPage from "../View/components/SearchPage";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -26,9 +27,12 @@ export default function Controller() {
   const [cart, setCart] = useState([]);
   const [page, setPage] = useState(PAGE_HOME);
   const [user, setUser] = useState(true);
+  const [searchProduct, setSearchProduct] = useState("");
   const nextPage = (pages) => setPage(pages);
   const handleLogin = () => {
-    $("#LoginPage").css("display", "block");
+    user === true
+      ? setPage("userInformation")
+      : $("#LoginPage").css("display", "block");
   };
   const aboutLoza = [
     {
@@ -124,19 +128,30 @@ export default function Controller() {
               className="search__in"
               type="text"
               placeholder="Tìm sản phẩm"
+              onChange={(event) => {
+                $(".search__header").css("display", "flex");
+                setSearchProduct(event.target.value);
+              }}
             />
-            <button className="btn btn--search">
+            <button
+              className="btn btn--search"
+              onClick={() => {
+                if (searchProduct === "") {
+                  setPage(PAGE_HOME);
+                } else {
+                  setPage("searchPage");
+                  $(".search__header").css("display", "flex");
+                  $(".product__header").css("display", "none");
+                }
+              }}
+            >
               <img src="https://bizweb.dktcdn.net/100/438/408/themes/848101/assets/search.svg" />
             </button>
           </div>
           <ul className="navbar__user col-xl-1">
             <li className="user--customer">
               <lord-icon
-                onClick={
-                  user === true
-                    ? () => setPage("userInformation")
-                    : () => handleLogin()
-                }
+                onClick={() => handleLogin()}
                 trigger="hover"
                 src="https://cdn.lordicon.com/dxjqoygy.json"
               ></lord-icon>
@@ -177,7 +192,23 @@ export default function Controller() {
           <TShirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
         )}
         {page === PAGE_CART && (
-          <Cart cart={cart} setCart={setCart} setPage={setPage} user={user} />
+          <Cart
+            cart={cart}
+            setCart={setCart}
+            setPage={setPage}
+            onClick={handleLogin}
+            user={user}
+          />
+        )}
+        {page === "searchPage" && (
+          <SearchPage
+            cart={cart}
+            setCart={setCart}
+            setPage={setPage}
+            user={user}
+            searchProduct={searchProduct}
+            setSearchProduct={setSearchProduct}
+          />
         )}
         {page === "userInformation" && <User />}
       </div>

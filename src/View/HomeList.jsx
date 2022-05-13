@@ -43,6 +43,7 @@ import pinchwaist from "../Modal/Skirt/pinchwaist.jpg";
 const HomeList = [
   {
     key: 1,
+    type: "vest",
     code: "LV111008CA",
     name: "Áo Blazer phong cách Hàn Quốc màu cam",
     price: 399000,
@@ -52,6 +53,7 @@ const HomeList = [
   },
   {
     key: 2,
+    type: "vest",
     code: "LV101008DE",
     name: "Áo Blazer phong cách Hàn Quốc màu đen",
     price: 499000,
@@ -61,6 +63,7 @@ const HomeList = [
   },
   {
     key: 3,
+    type: "vest",
     code: "LV111008BE",
     name: "Áo Blazer phong cách Hàn Quốc màu Be",
     price: 399000,
@@ -70,6 +73,7 @@ const HomeList = [
   },
   {
     key: 4,
+    type: "vest",
     code: "LV101008CA",
     name: "Bộ vest phong cách Hàn Quốc màu cam",
     price: 499000,
@@ -79,6 +83,7 @@ const HomeList = [
   },
   {
     key: 5,
+    type: "trousers",
     code: "QJ302068DA ",
     name: "Quần jeans dáng suông màu xanh đậm",
     price: 399000,
@@ -88,6 +93,7 @@ const HomeList = [
   },
   {
     key: 6,
+    type: "trousers",
     code: "QJ302068DA ",
     name: "Quần jeans dáng suông màu xanh nhạt",
     price: 399000,
@@ -97,6 +103,7 @@ const HomeList = [
   },
   {
     key: 7,
+    type: "trousers",
     code: "LQ302001",
     name: "Quần short nữ xếp ly",
     price: 375000,
@@ -106,6 +113,7 @@ const HomeList = [
   },
   {
     key: 8,
+    type: "trousers",
     code: "LQ302005",
     name: "Quần short nữ dáng suông",
     price: 375000,
@@ -115,6 +123,7 @@ const HomeList = [
   },
   {
     key: 9,
+    type: "trousers",
     code: "LQ302002",
     name: "Quần short nữ hai cúc",
     price: 375000,
@@ -124,6 +133,7 @@ const HomeList = [
   },
   {
     key: 10,
+    type: "trousers",
     code: "LQ302006",
     name: "Quần short nữ kẻ caro",
     price: 395000,
@@ -133,6 +143,7 @@ const HomeList = [
   },
   {
     key: 11,
+    type: "shirt",
     code: "PT302037",
     name: "Áo phông nữ phom rộng in hình I can & I will",
     price: 240000,
@@ -142,6 +153,7 @@ const HomeList = [
   },
   {
     key: 12,
+    type: "shirt",
     code: "PT402045",
     name: "Áo phông nữ in hình họa tiết",
     price: 225000,
@@ -151,6 +163,7 @@ const HomeList = [
   },
   {
     key: 13,
+    type: "shirt",
     code: "PT302018",
     name: "Áo phông nữ phom rộng in hình Monsterpiece",
     price: 245000,
@@ -160,6 +173,7 @@ const HomeList = [
   },
   {
     key: 14,
+    type: "shirt",
     code: "PT402038",
     name: "Áo phông nữ phom rộng in hình gấu PICK ME",
     price: 245000,
@@ -169,6 +183,7 @@ const HomeList = [
   },
   {
     key: 15,
+    type: "shirt",
     code: "PT302027",
     name: "Áo phông nữ in hình lá",
     price: 220000,
@@ -178,6 +193,7 @@ const HomeList = [
   },
   {
     key: 16,
+    type: "shirt",
     code: "PT402050",
     name: "Áo phông nữ in hình dưa hấu",
     price: 215000,
@@ -187,6 +203,7 @@ const HomeList = [
   },
   {
     key: 17,
+    type: "tshirt",
     code: "LS041136XA",
     name: "Áo sơ mi cổ nơ cách điệu",
     price: 239000,
@@ -196,6 +213,7 @@ const HomeList = [
   },
   {
     key: 18,
+    type: "tshirt",
     code: "LS03106XA",
     name: "Áo sơ mi hoa cổ nơ",
     price: 239000,
@@ -205,6 +223,7 @@ const HomeList = [
   },
   {
     key: 19,
+    type: "tshirt",
     code: "LS061065HO",
     name: "Áo sơ mi lụa tay bồng",
     price: 239000,
@@ -214,6 +233,7 @@ const HomeList = [
   },
   {
     key: 20,
+    type: "skirt",
     code: "LC071005DE",
     name: "Chân váy ôm bút chì nhúm eo",
     price: 350000,
@@ -223,6 +243,7 @@ const HomeList = [
   },
   {
     key: 21,
+    type: "skirt",
     code: "LC061006TT",
     name: "Chân váy ôm đuôi cá",
     price: 199000,
@@ -232,6 +253,7 @@ const HomeList = [
   },
   {
     key: 22,
+    type: "skirt",
     code: "LC03105KE",
     name: "Chân váy kẻ vạt chéo",
     price: 199000,
@@ -241,6 +263,7 @@ const HomeList = [
   },
   {
     key: 23,
+    type: "skirt",
     code: "LC12012DE",
     name: "Chân váy kẻ đen",
     price: 199000,

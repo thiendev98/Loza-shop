@@ -15,20 +15,6 @@ export default function Home({ setPage }) {
     autoplaySpeed: 2500,
     cssEase: "linear",
   };
-  const handleClick = (i) => {
-    if (i >= 0 && i <= 3) {
-      setPage("vest");
-    } else if (i > 3 && i <= 9) {
-      setPage("trousers");
-    } else if (i > 9 && i <= 15) {
-      setPage("shirt");
-    } else if (i > 15 && i <= 18) {
-      setPage("tshirt");
-    } else if (i > 18 && i <= 22) {
-      setPage("shirt");
-    } else {
-    }
-  };
   const backgroundList = [background1, background2];
   return (
     <div id="HomePage">
@@ -42,22 +28,24 @@ export default function Home({ setPage }) {
       <div className="container">
         <h3>Mua gì hôm nay?</h3>
         <ul className="home__content row container-fluid">
-          {HomeList.map((list, i) => (
+          {HomeList.map((product, i) => (
             <li className="col-xl-3 home__content--item">
               <div className="item__list">
                 <img
                   className="list__img"
-                  src={list.link[0]}
-                  onClick={() => handleClick(i)}
+                  src={product.link[0]}
+                  onClick={() => setPage(product.type)}
                 />
                 <img
                   className="list__img--hover"
-                  src={list.link[1]}
-                  onClick={() => handleClick(i)}
+                  src={product.link[1]}
+                  onClick={() => setPage(product.type)}
                 />
               </div>
-              <p onClick={() => handleClick(i)}>{list.name}</p>
-              <span onClick={() => handleClick(i)}>{list.price} đ</span>
+              <p onClick={() => setPage(product.type)}>{product.name}</p>
+              <span onClick={() => setPage(product.type)}>
+                {product.price} đ
+              </span>
             </li>
           ))}
         </ul>

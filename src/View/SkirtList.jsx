@@ -11,6 +11,7 @@ import kakia3 from "../Modal/Skirt/kakia3.jpg";
 const SkirtList = [
   {
     key: 1,
+    type: "skirt",
     code: "LC061006TT",
     name: "Chân váy ôm đuôi cá",
     price: 199000,
@@ -20,6 +21,7 @@ const SkirtList = [
   },
   {
     key: 2,
+    type: "skirt",
     code: "LC03105KE",
     name: "Chân váy kẻ vạt chéo",
     price: 199000,
@@ -29,6 +31,7 @@ const SkirtList = [
   },
   {
     key: 3,
+    type: "skirt",
     code: "LC12012DE",
     name: "Chân váy kẻ đen",
     price: 199000,
@@ -39,6 +42,7 @@ const SkirtList = [
 
   {
     key: 4,
+    type: "skirt",
     code: "LC101026DE",
     name: "Chân váy kaki dáng A đính cúc màu đen",
     price: 350000,
@@ -48,6 +52,7 @@ const SkirtList = [
   },
   {
     key: 5,
+    type: "skirt",
     code: "LC101026TT",
     name: "Chân váy kaki dáng A đính cúc màu tím than",
     price: 350000,
@@ -57,6 +62,7 @@ const SkirtList = [
   },
   {
     key: 6,
+    type: "skirt",
     code: "LC101026BE",
     name: "Chân váy kaki dáng A đính cúc màu be",
     price: 350000,
@@ -66,6 +72,7 @@ const SkirtList = [
   },
   {
     key: 7,
+    type: "skirt",
     code: "LC071005DE",
     name: "Chân váy ôm bút chì nhúm eo",
     price: 350000,
@@ -75,6 +82,7 @@ const SkirtList = [
   },
   {
     key: 8,
+    type: "skirt",
     code: "LC101025TT",
     name: "Chân váy kaki dáng A màu tím than",
     price: 350000,
@@ -84,6 +92,7 @@ const SkirtList = [
   },
   {
     key: 9,
+    type: "skirt",
     code: "LC101025BE",
     name: "Chân váy kaki dáng A màu be",
     price: 350000,
@@ -93,6 +102,7 @@ const SkirtList = [
   },
   {
     key: 10,
+    type: "skirt",
     code: "LC101025DE",
     name: "Chân váy kaki dáng A màu đen",
     price: 350000,

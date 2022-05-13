@@ -3,7 +3,7 @@ import { FaTrash } from "react-icons/fa";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 defineLordIconElement(loadAnimation);
-export default function Cart({ cart, setCart, setPage, user }) {
+export default function Cart({ cart, setCart, setPage, onClick, user }) {
   const getTotalSum = () => {
     return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0);
   };
@@ -43,7 +43,7 @@ export default function Cart({ cart, setCart, setPage, user }) {
           ) : (
             <>
               <p>Bạn cần đăng nhập để mua hàng</p>
-              <button onClick={() => setPage("shirt")}>Đăng nhập ngay</button>
+              <button onClick={onClick}>Đăng nhập ngay</button>
             </>
           )}
         </div>

@@ -68,7 +68,7 @@ export default function Login({ user, setUser, setPage, setAdmin }) {
               Email hoặc mật khẩu không chính xác
             </span>
             <div className="form--item">
-              <label>SĐT / Email</label>
+              <label>Email</label>
               <input
                 type="text"
                 name="username"

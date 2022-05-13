@@ -1,9 +1,34 @@
 import React, { useState } from "react";
-import "./styles/style.css";
+import "../styles/style.css";
 import $ from "jquery";
 import { FaGooglePlusG, FaTimes } from "react-icons/fa";
-export default function Login() {
+export default function Login({ user, setUser, setPage, setAdmin }) {
   const [login, setLogin] = useState(true);
+  const adminUser = {
+    email: "admin",
+    password: "123456",
+  };
+  const customerUser = {
+    email: "customer",
+    password: "123456",
+  };
+  const [account, setAccount] = useState({ email: "", password: "" });
+  const LoginAccount = () => {
+    if (
+      adminUser.email === account.email &&
+      adminUser.password === account.password
+    ) {
+      $("#LoginPage").css("display", "none");
+      setAdmin(true);
+    } else if (
+      customerUser.email === account.email &&
+      customerUser.password === account.password
+    ) {
+      $("#LoginPage").css("display", "none");
+      setUser(true);
+      setPage("home");
+    }
+  };
   return (
     <div id="LoginPage">
       {login === true && (
@@ -19,13 +44,31 @@ export default function Login() {
             <h4>Đăng nhập</h4>
             <div className="form--item">
               <label>SĐT / Email</label>
-              <input type="text" placeholder="Nhập email hoặc số điện thoại" />
+              <input
+                type="text"
+                name="username"
+                placeholder="Nhập email hoặc số điện thoại"
+                onChange={(event) =>
+                  setAccount({ ...account, email: event.target.value })
+                }
+                value={account.email}
+              />
             </div>
             <div className="form--item">
               <label>Mật khẩu</label>
-              <input type="password" placeholder="Mật khẩu" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Mật khẩu"
+                onChange={(event) =>
+                  setAccount({ ...account, password: event.target.value })
+                }
+                value={account.password}
+              />
             </div>
-            <button className="button--login">Đăng nhập</button>
+            <button className="button--login" onClick={() => LoginAccount()}>
+              Đăng nhập
+            </button>
             <div className="form--login__select">
               <span>Hoặc</span>
             </div>

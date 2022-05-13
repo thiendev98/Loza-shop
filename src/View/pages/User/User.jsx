@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import Address from "./Address";
 import OrderList from "./OrderList";
 import Information from "./Information";
-export default function User() {
+import "../styles/style.css";
+export default function User({ user, setUser, setPage }) {
   const [pageInfo, setPageInfo] = useState("information");
   const [nameInfo, setnameInfo] = useState("Thông tin cá nhân");
   const handleClickInfo = (index) => {
@@ -49,7 +50,14 @@ export default function User() {
               alt="avatar"
             />
             <p>nino nanako</p>
-            <button>Đăng xuất</button>
+            <button
+              onClick={() => {
+                setUser(false);
+                setPage("home");
+              }}
+            >
+              Đăng xuất
+            </button>
           </div>
           <ul className="user__content--list__info">
             {listInfo.map((info, index) => (

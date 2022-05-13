@@ -23,10 +23,10 @@ const PAGE_TSHIRT = "tshirt";
 const PAGE_SKIRT = "skirt";
 const PAGE_TROUSERS = "trousers";
 const PAGE_CART = "cart";
-export default function Controller() {
+export default function Controller({ setAdmin }) {
   const [cart, setCart] = useState([]);
   const [page, setPage] = useState(PAGE_HOME);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const [searchProduct, setSearchProduct] = useState("");
   const nextPage = (pages) => setPage(pages);
   const handleLogin = () => {
@@ -155,7 +155,12 @@ export default function Controller() {
                 trigger="hover"
                 src="https://cdn.lordicon.com/dxjqoygy.json"
               ></lord-icon>
-              <Login />
+              <Login
+                user={user}
+                setUser={setUser}
+                setPage={setPage}
+                setAdmin={setAdmin}
+              />
             </li>
             <li className="user--cart">
               <lord-icon
@@ -210,7 +215,9 @@ export default function Controller() {
             setSearchProduct={setSearchProduct}
           />
         )}
-        {page === "userInformation" && <User />}
+        {page === "userInformation" && (
+          <User user={user} setUser={setUser} setPage={setPage} />
+        )}
       </div>
       {/*  */}
       <div id="footer">

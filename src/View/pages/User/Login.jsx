@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/style.css";
 import $ from "jquery";
+import axios from "axios";
 import { FaGooglePlusG, FaTimes } from "react-icons/fa";
 export default function Login({ user, setUser, nextPage, setAdmin }) {
   const [login, setLogin] = useState(true);
@@ -35,7 +36,24 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
     email: "",
     password: "",
   });
-  const buttonRegister = () => {};
+
+  const buttonRegister = () => {
+    // const registerData = new FormData();
+    // registerData.append("name", registerAccount.name);
+    // registerData.append("userName", registerAccount.userName);
+    // registerData.append("phone", registerAccount.phone);
+    // registerData.append("email", registerAccount.email);
+    // registerData.append("password", registerAccount.password);
+    // let url = "http://127.0.0.1:8000/";
+    // axios
+    //   .post(url, registerData, {
+    //     headers: {
+    //       "content-type": "multipart/form-data",
+    //     },
+    //   })
+    //   .then((response) => console.log(response.data))
+    //   .catch((err) => console.log(err));
+  };
   const buttonLogin = () => {
     adminUser.forEach((admin) => {
       if (
@@ -106,6 +124,7 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
                   })
                 }
                 value={loginAccount.password}
+                required
                 onKeyPress={(event) =>
                   event.key === "Enter" ? buttonLogin() : ""
                 }
@@ -157,6 +176,7 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
                   })
                 }
                 value={registerAccount.name}
+                required
               />
             </div>
             <div className="form--item">
@@ -171,6 +191,7 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
                   })
                 }
                 value={registerAccount.userName}
+                required
               />
             </div>
             <div className="form--item">
@@ -185,6 +206,7 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
                   })
                 }
                 value={registerAccount.phone}
+                required
               />
             </div>
             <div className="form--item">
@@ -199,6 +221,7 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
                   })
                 }
                 value={registerAccount.email}
+                required
               />
             </div>
             <div className="form--item">
@@ -213,6 +236,7 @@ export default function Login({ user, setUser, nextPage, setAdmin }) {
                   })
                 }
                 value={registerAccount.password}
+                required
               />
             </div>
             <button

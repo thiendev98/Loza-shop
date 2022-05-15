@@ -135,6 +135,25 @@ export default function Cart({ cart, setCart, nextPage, onClick, user }) {
                 <p>Tổng tiền:</p>
                 <span>{getTotalSum()} đ</span>
               </div>
+              {getTotalSum() < 1000000 && ""}
+              {getTotalSum() < 1750000 && (
+                <div className="payment--discount">
+                  <span>- {50000} đ</span>
+                  <p>{getTotalSum() - 50000} đ </p>
+                </div>
+              )}
+              {getTotalSum() < 2000000 && getTotalSum() >= 1750000 && (
+                <div className="payment--discount">
+                  <span>- {100000} đ</span>
+                  <p>{getTotalSum() - 100000} đ </p>
+                </div>
+              )}
+              {getTotalSum() >= 2000000 && (
+                <div className="payment--discount">
+                  <span>- {150000} đ</span>
+                  <p>{getTotalSum() - 150000} đ </p>
+                </div>
+              )}
               <button>Đặt hàng</button>
             </div>
           </div>

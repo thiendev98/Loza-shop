@@ -9,7 +9,7 @@ defineLordIconElement(loadAnimation);
 export default function Product({
   setCart,
   cart,
-  setPage,
+  nextPage,
   ProductList,
   user,
   value,
@@ -141,7 +141,7 @@ export default function Product({
           newCart.push(itemInCart);
         }
         setCart(newCart);
-        setPage("cart");
+        nextPage("cart");
       }
     }
   };
@@ -193,7 +193,7 @@ export default function Product({
         <div style={{ padding: "12px 0" }}></div>
       ) : (
         <div className="product__header">
-          <span onClick={() => setPage("home")}>Trang chủ </span> /
+          <span onClick={() => nextPage("home")}>Trang chủ </span> /
           <span onClick={() => returnPage()}> {namePage}</span>
         </div>
       )}

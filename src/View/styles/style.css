@@ -2,6 +2,10 @@
   overflow: hidden;
 }
 
+#HomePage .slick-dots {
+  display: none;
+}
+
 #HomePage .slick-dots li button {
   display: none;
 }
@@ -10,13 +14,105 @@
   border: 2px solid transparent;
 }
 
+#HomePage .sales__list {
+  padding: 18px 0;
+}
+
+#HomePage .sales__list .row,
+#HomePage .sales__list p {
+  padding: 0;
+  margin: 0;
+}
+
+#HomePage .sales__list--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-right: 1px solid grey;
+}
+
+#HomePage .sales__list--item .item--order {
+  border-top: 1px solid grey;
+  margin: 4px 0;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#HomePage .sales__list--item p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#HomePage .sales__list--item .item--decrease {
+  background-color: #0c8796;
+  padding: 3px;
+  color: #fff;
+  font-size: 20px;
+}
+
+#HomePage .sales__list--item .item--price {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+#HomePage .sales__list--discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#HomePage .sales__list--discount .item--discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#HomePage .sales__list--discount .item--discount p {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 4px;
+}
+
+#HomePage .sales__list--discount .item--discount span {
+  border-top: 1px solid grey;
+  font-size: 18px;
+  margin: 0 4px;
+}
+
 #HomePage .container {
   padding: 8px 0;
 }
 
 #HomePage .container h3 {
   padding: 12px 0;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
 }
@@ -294,6 +390,21 @@
 
 #CartPage .cart__products .cart__products--payment .payment--total span {
   float: right;
+}
+
+#CartPage .cart__products .cart__products--payment .payment--discount {
+  float: right;
+}
+
+#CartPage .cart__products .cart__products--payment .payment--discount span {
+  margin: 4px 0;
+  float: right;
+  border-bottom: 1px solid grey;
+}
+
+#CartPage .cart__products .cart__products--payment .payment--discount p {
+  padding: 0;
+  margin: 0;
 }
 
 #CartPage .cart__products .cart__products--payment button {

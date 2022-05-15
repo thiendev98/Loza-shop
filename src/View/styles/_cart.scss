@@ -134,6 +134,18 @@
           float: right;
         }
       }
+      .payment--discount {
+        float: right;
+        span {
+          margin: 4px 0;
+          float: right;
+          border-bottom: 1px solid grey;
+        }
+        p {
+          padding: 0;
+          margin: 0;
+        }
+      }
       button {
         width: 100%;
         height: 48px;

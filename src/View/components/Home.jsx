@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import background1 from "../images/background1.jpeg";
 import background2 from "../images/background2.jpeg";
 import HomeList from "../HomeList";
-import Product from "./Product";
 export default function Home({ setPage }) {
   const settings = {
     dots: true,

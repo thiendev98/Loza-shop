@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/style.css";
 import HomeList from "../HomeList";
 import Product from "./Product";
@@ -10,18 +10,12 @@ export default function SearchPage({
   searchProduct,
   setSearchProduct,
 }) {
-  const [productList, setProductList] = useState();
   const getProducts = () => {
     return HomeList.filter((product) =>
       product.name
         .toLocaleLowerCase()
         .includes(searchProduct.toLocaleLowerCase())
     );
-  };
-  const getValues = () => {
-    getProducts.find((p, i) => {
-      console.log(p, i);
-    });
   };
   return (
     <div id="SearchPage">
@@ -32,7 +26,7 @@ export default function SearchPage({
           <span className="search__header--search">Tìm kiếm</span>
         </span>
         <p>
-          Kết quả tìm kiếm sản phẩm{" "}
+          Kết quả tìm kiếm sản phẩm
           {searchProduct.length === 0 ? "" : <span>"{searchProduct}"</span>}
         </p>
       </div>

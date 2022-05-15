@@ -28,12 +28,24 @@ export default function Controller({ setAdmin }) {
   const [page, setPage] = useState(PAGE_HOME);
   const [user, setUser] = useState(false);
   const [searchProduct, setSearchProduct] = useState("");
-  const nextPage = (pages) => setPage(pages);
+  const nextPage = (pages) => {
+    setSearchProduct("");
+    setPage(pages);
+  };
   const handleLogin = () => {
     user === true
-      ? setPage("userInformation")
+      ? nextPage("userInformation")
       : $("#LoginPage").css("display", "block") &&
         $(".form--warning").css("display", "none");
+  };
+  const searchProductFunction = () => {
+    if (searchProduct === "") {
+      setPage(PAGE_HOME);
+    } else {
+      setPage("searchPage");
+      $(".search__header").css("display", "flex");
+      $(".product__header").css("display", "none");
+    }
   };
   const aboutLoza = [
     {
@@ -99,24 +111,43 @@ export default function Controller({ setAdmin }) {
         <div className="navbar row container-fluid">
           <div
             className="navbar__logo col-xl-1"
-            onClick={() => setPage(PAGE_HOME)}
+            onClick={() => {
+              nextPage(PAGE_HOME);
+            }}
           >
             <img className="logo--img" src={logo} />
           </div>
           <ul className="navbar__list col-xl-5">
-            <li className="navbar__link" onClick={() => nextPage(PAGE_SHIRT)}>
+            <li
+              className="navbar__link"
+              onClick={() => {
+                nextPage(PAGE_SHIRT);
+              }}
+            >
               Áo phông
             </li>
-            <li className="navbar__link" onClick={() => nextPage(PAGE_TSHIRT)}>
+            <li
+              className="navbar__link"
+              onClick={() => {
+                nextPage(PAGE_TSHIRT);
+              }}
+            >
               Áo sơ mi
             </li>
             <li
               className="navbar__link"
-              onClick={() => nextPage(PAGE_TROUSERS)}
+              onClick={() => {
+                nextPage(PAGE_TROUSERS);
+              }}
             >
               Quần
             </li>
-            <li className="navbar__link" onClick={() => nextPage(PAGE_SKIRT)}>
+            <li
+              className="navbar__link"
+              onClick={() => {
+                nextPage(PAGE_SKIRT);
+              }}
+            >
               Chân váy
             </li>
             <li className="navbar__link" onClick={() => nextPage(PAGE_VEST)}>
@@ -133,18 +164,14 @@ export default function Controller({ setAdmin }) {
                 $(".search__header").css("display", "flex");
                 setSearchProduct(event.target.value);
               }}
+              value={searchProduct}
+              onKeyPress={(event) =>
+                event.key === "Enter" ? searchProductFunction() : ""
+              }
             />
             <button
               className="btn btn--search"
-              onClick={() => {
-                if (searchProduct === "") {
-                  setPage(PAGE_HOME);
-                } else {
-                  setPage("searchPage");
-                  $(".search__header").css("display", "flex");
-                  $(".product__header").css("display", "none");
-                }
-              }}
+              onClick={() => searchProductFunction()}
             >
               <img src="https://bizweb.dktcdn.net/100/438/408/themes/848101/assets/search.svg" />
             </button>
@@ -159,7 +186,7 @@ export default function Controller({ setAdmin }) {
               <Login
                 user={user}
                 setUser={setUser}
-                setPage={setPage}
+                nextPage={nextPage}
                 setAdmin={setAdmin}
               />
             </li>
@@ -176,32 +203,47 @@ export default function Controller({ setAdmin }) {
       </div>
       {/*  */}
       <div id="content--controller">
-        {page === PAGE_HOME && <Home setPage={setPage} />}
+        {page === PAGE_HOME && <Home nextPage={nextPage} />}
         {page === PAGE_SKIRT && (
-          <Skirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
+          <Skirt
+            cart={cart}
+            setCart={setCart}
+            nextPage={nextPage}
+            user={user}
+          />
         )}
         {page === PAGE_SHIRT && (
-          <Shirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
+          <Shirt
+            cart={cart}
+            setCart={setCart}
+            nextPage={nextPage}
+            user={user}
+          />
         )}
         {page === PAGE_TROUSERS && (
           <Trousers
             cart={cart}
             setCart={setCart}
-            setPage={setPage}
+            nextPage={nextPage}
             user={user}
           />
         )}
         {page === PAGE_VEST && (
-          <Vest cart={cart} setCart={setCart} setPage={setPage} user={user} />
+          <Vest cart={cart} setCart={setCart} nextPage={nextPage} user={user} />
         )}
         {page === PAGE_TSHIRT && (
-          <TShirt cart={cart} setCart={setCart} setPage={setPage} user={user} />
+          <TShirt
+            cart={cart}
+            setCart={setCart}
+            nextPage={nextPage}
+            user={user}
+          />
         )}
         {page === PAGE_CART && (
           <Cart
             cart={cart}
             setCart={setCart}
-            setPage={setPage}
+            nextPage={nextPage}
             onClick={handleLogin}
             user={user}
           />
@@ -220,7 +262,7 @@ export default function Controller({ setAdmin }) {
           <User
             user={user}
             setUser={setUser}
-            setPage={setPage}
+            nextPage={nextPage}
             cart={cart}
             setCart={setCart}
           />

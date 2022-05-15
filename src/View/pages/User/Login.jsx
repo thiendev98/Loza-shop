@@ -2,34 +2,45 @@ import React, { useState } from "react";
 import "../styles/style.css";
 import $ from "jquery";
 import { FaGooglePlusG, FaTimes } from "react-icons/fa";
-export default function Login({ user, setUser, setPage, setAdmin }) {
+export default function Login({ user, setUser, nextPage, setAdmin }) {
   const [login, setLogin] = useState(true);
   const adminUser = [
     {
-      email: "admin",
+      userName: "admin",
       password: "123456",
     },
     {
-      email: "lozashop",
+      userName: "lozashop",
       password: "123456",
     },
   ];
   const customerUser = [
     {
-      email: "customer",
+      userName: "customer",
       password: "123456",
     },
     {
-      email: "client",
+      userName: "client",
       password: "123456",
     },
   ];
-  const [account, setAccount] = useState({ email: "", password: "" });
-  const LoginAccount = () => {
+  const [loginAccount, setLoginAccount] = useState({
+    userName: "",
+    password: "",
+  });
+  const [registerAccount, setRegisterAccount] = useState({
+    name: "",
+    userName: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
+  const buttonRegister = () => {};
+  const buttonLogin = () => {
     adminUser.forEach((admin) => {
       if (
-        admin.email === account.email &&
-        admin.password === account.password
+        admin.userName === loginAccount.userName &&
+        admin.password === loginAccount.password
       ) {
         $("#LoginPage").css("display", "none");
         setAdmin(true);
@@ -40,12 +51,12 @@ export default function Login({ user, setUser, setPage, setAdmin }) {
     customerUser.forEach((customer) => {
       console.log(customer);
       if (
-        customer.email === account.email &&
-        customer.password === account.password
+        customer.userName === loginAccount.userName &&
+        customer.password === loginAccount.password
       ) {
         $("#LoginPage").css("display", "none");
         setUser(true);
-        setPage("home");
+        nextPage("home");
       } else {
         $(".form--warning").css("display", "flex");
       }
@@ -68,15 +79,18 @@ export default function Login({ user, setUser, setPage, setAdmin }) {
               Email hoặc mật khẩu không chính xác
             </span>
             <div className="form--item">
-              <label>Email</label>
+              <label>Tên đăng nhập</label>
               <input
                 type="text"
-                name="username"
+                name="userName"
                 placeholder="Nhập email hoặc số điện thoại"
                 onChange={(event) =>
-                  setAccount({ ...account, email: event.target.value })
+                  setLoginAccount({
+                    ...loginAccount,
+                    userName: event.target.value,
+                  })
                 }
-                value={account.email}
+                value={loginAccount.userName}
               />
             </div>
             <div className="form--item">
@@ -86,12 +100,18 @@ export default function Login({ user, setUser, setPage, setAdmin }) {
                 name="password"
                 placeholder="Mật khẩu"
                 onChange={(event) =>
-                  setAccount({ ...account, password: event.target.value })
+                  setLoginAccount({
+                    ...loginAccount,
+                    password: event.target.value,
+                  })
                 }
-                value={account.password}
+                value={loginAccount.password}
+                onKeyPress={(event) =>
+                  event.key === "Enter" ? buttonLogin() : ""
+                }
               />
             </div>
-            <button className="button--login" onClick={() => LoginAccount()}>
+            <button className="button--login" onClick={() => buttonLogin()}>
               Đăng nhập
             </button>
             <div className="form--login__select">
@@ -127,21 +147,80 @@ export default function Login({ user, setUser, setPage, setAdmin }) {
             <h4>Đăng ký</h4>
             <div className="form--item">
               <label>Họ tên</label>
-              <input type="text" placeholder="Họ tên..." />
+              <input
+                type="text"
+                placeholder="Họ tên..."
+                onChange={(event) =>
+                  setRegisterAccount({
+                    ...registerAccount,
+                    name: event.target.value,
+                  })
+                }
+                value={registerAccount.name}
+              />
+            </div>
+            <div className="form--item">
+              <label>Tên đăng nhập</label>
+              <input
+                type="text"
+                placeholder="Tên đăng nhập..."
+                onChange={(event) =>
+                  setRegisterAccount({
+                    ...registerAccount,
+                    userName: event.target.value,
+                  })
+                }
+                value={registerAccount.userName}
+              />
             </div>
             <div className="form--item">
               <label>Số điện thoại</label>
-              <input type="text" placeholder="Số điện thoại..." />
+              <input
+                type="text"
+                placeholder="Số điện thoại..."
+                onChange={(event) =>
+                  setRegisterAccount({
+                    ...registerAccount,
+                    phone: event.target.value,
+                  })
+                }
+                value={registerAccount.phone}
+              />
             </div>
             <div className="form--item">
               <label>Email</label>
-              <input type="text" placeholder="Email..." />
+              <input
+                type="text"
+                placeholder="Email..."
+                onChange={(event) =>
+                  setRegisterAccount({
+                    ...registerAccount,
+                    email: event.target.value,
+                  })
+                }
+                value={registerAccount.email}
+              />
             </div>
             <div className="form--item">
               <label>Mật khẩu</label>
-              <input type="password" placeholder="Mật khẩu..." />
+              <input
+                type="password"
+                placeholder="Mật khẩu..."
+                onChange={(event) =>
+                  setRegisterAccount({
+                    ...registerAccount,
+                    password: event.target.value,
+                  })
+                }
+                value={registerAccount.password}
+              />
             </div>
-            <button className="button--register">Đăng ký</button>
+            <button
+              className="button--register"
+              onClick={() => buttonRegister()}
+            >
+              Đăng ký
+            </button>
             <p>
               {`Bạn đã có tài khoản? `}
               <span onClick={() => setLogin(true)}>Đăng nhập ngay</span>

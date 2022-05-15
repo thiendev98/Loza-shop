@@ -3,7 +3,7 @@ import Address from "./Address";
 import OrderList from "./OrderList";
 import Information from "./Information";
 import "../styles/style.css";
-export default function User({ user, setUser, setPage, cart, setCart }) {
+export default function User({ user, setUser, nextPage, cart, setCart }) {
   const [pageInfo, setPageInfo] = useState("information");
   const [nameInfo, setnameInfo] = useState("Thông tin cá nhân");
   const handleClickInfo = (index) => {
@@ -53,7 +53,7 @@ export default function User({ user, setUser, setPage, cart, setCart }) {
             <button
               onClick={() => {
                 setUser(false);
-                setPage("home");
+                nextPage("home");
                 setCart([]);
               }}
             >

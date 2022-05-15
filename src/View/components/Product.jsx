@@ -289,7 +289,9 @@ export default function Product({
                               </p>
                               <p
                                 onClick={() => handleShowInfo(i)}
-                                style={{ color: "cadetblue" }}
+                                style={{
+                                  color: "cadetblue",
+                                }}
                               >
                                 {service.text}
                               </p>
@@ -298,8 +300,10 @@ export default function Product({
                                   <FaTimes
                                     className="icon__cancel"
                                     onClick={() => handleHideInfo()}
+                                    style={{ cursor: "pointer" }}
                                   />
                                   <p
+                                    style={{ cursor: "none" }}
                                     dangerouslySetInnerHTML={{
                                       __html: listContent[about],
                                     }}

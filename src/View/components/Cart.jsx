@@ -136,7 +136,7 @@ export default function Cart({ cart, setCart, nextPage, onClick, user }) {
                 <span>{getTotalSum()} đ</span>
               </div>
               {getTotalSum() < 1000000 && ""}
-              {getTotalSum() < 1750000 && (
+              {getTotalSum() < 1750000 && getTotalSum() >= 1000000 && (
                 <div className="payment--discount">
                   <span>- {50000} đ</span>
                   <p>{getTotalSum() - 50000} đ </p>

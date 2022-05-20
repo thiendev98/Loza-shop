@@ -83,6 +83,44 @@
       }
     }
   }
+  #ProductPage {
+    .product__content {
+      &--item {
+        @include centerItem();
+        flex-direction: column;
+        margin: 10px 0;
+        p {
+          width: 192px;
+        }
+        span {
+          width: 192px;
+        }
+        .item__list {
+          position: relative;
+          object-fit: contain;
+          .list__img {
+            height: 262px;
+            width: 192px;
+            cursor: pointer;
+          }
+        }
+        .list__img--hover {
+          position: absolute;
+          height: 262px;
+          width: 192px;
+          left: 0;
+          right: 0;
+          top: 0;
+          cursor: pointer;
+          transition: all 0.8s ease-in;
+          opacity: 0;
+        }
+        .item__list:hover .list__img--hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 768px) and (min-width: 576px) {
   #HomePage {
@@ -123,6 +161,51 @@
         }
         span {
           width: 192px;
+        }
+        .item__list {
+          position: relative;
+          object-fit: contain;
+          .list__img {
+            height: 262px;
+            width: 192px;
+            cursor: pointer;
+          }
+        }
+        .list__img--hover {
+          position: absolute;
+          height: 262px;
+          width: 192px;
+          left: 0;
+          right: 0;
+          top: 0;
+          cursor: pointer;
+          transition: all 0.8s ease-in;
+          opacity: 0;
+        }
+        .item__list:hover .list__img--hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  #ProductPage {
+    .product__header {
+      span {
+        font-size: 16px;
+      }
+    }
+    .product__content {
+      &--item {
+        @include centerItem();
+        flex-direction: column;
+        margin: 10px 0;
+        p {
+          width: 192px;
+          font-size: 16px;
+        }
+        span {
+          width: 192px;
+          font-size: 16px;
         }
         .item__list {
           position: relative;
@@ -217,6 +300,51 @@
       }
     }
   }
+  #ProductPage {
+    .product__header {
+      span {
+        font-size: 14px;
+      }
+    }
+    .product__content {
+      &--item {
+        @include centerItem();
+        flex-direction: column;
+        margin: 10px 0;
+        p {
+          width: 182px;
+          font-size: 14px;
+        }
+        span {
+          width: 182px;
+          font-size: 14px;
+        }
+        .item__list {
+          position: relative;
+          object-fit: contain;
+          .list__img {
+            height: 202px;
+            width: 182px;
+            cursor: pointer;
+          }
+        }
+        .list__img--hover {
+          position: absolute;
+          height: 202px;
+          width: 182px;
+          left: 0;
+          right: 0;
+          top: 0;
+          cursor: pointer;
+          transition: all 0.8s ease-in;
+          opacity: 0;
+        }
+        .item__list:hover .list__img--hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 400px) {
   #HomePage {
@@ -236,7 +364,7 @@
       flex-wrap: wrap;
     }
     .c-12 {
-      flex-basis: 80%;
+      flex-basis: 94%;
     }
     .sales__list {
       &--item {
@@ -276,6 +404,60 @@
         }
         span {
           width: 182px;
+        }
+        .item__list {
+          position: relative;
+          object-fit: contain;
+          .list__img {
+            height: 202px;
+            width: 182px;
+            cursor: pointer;
+          }
+        }
+        .list__img--hover {
+          position: absolute;
+          height: 202px;
+          width: 182px;
+          left: 0;
+          right: 0;
+          top: 0;
+          cursor: pointer;
+          transition: all 0.8s ease-in;
+          opacity: 0;
+        }
+        .item__list:hover .list__img--hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  #ProductPage {
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .c-12 {
+      flex-basis: 94%;
+    }
+    .product__header {
+      span {
+        font-size: 13px;
+      }
+    }
+    .product__content {
+      &--item {
+        @include centerItem();
+        flex-direction: column;
+        margin: 10px 0;
+        p {
+          width: 182px;
+          font-size: 13px;
+        }
+        span {
+          width: 182px;
+          font-size: 13px;
         }
         .item__list {
           position: relative;

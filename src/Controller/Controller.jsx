@@ -7,8 +7,8 @@ import Skirt from "../View/components/Skirt";
 import Vest from "../View/components/Vest";
 import Cart from "../View/components/Cart";
 import Trousers from "../View/components/Trousers";
-import Login from "../View/pages/User/Login";
-import User from "../View/pages/User/User";
+import Login from "./Login";
+import User from "../View/User/User";
 import SearchPage from "../View/components/SearchPage";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
@@ -53,6 +53,9 @@ export default function Controller({ setAdmin }) {
       ? nextPage("userInformation")
       : $("#LoginPage").css("display", "block") &&
         $(".form--warning").css("display", "none");
+  };
+  const handleSignIn = () => {
+    user === true ? nextPage("userInformation") : nextPage("home");
   };
   const searchProductFunction = () => {
     if (searchProduct === "") {
@@ -105,10 +108,6 @@ export default function Controller({ setAdmin }) {
   ];
   const aboutLoza = [
     {
-      title: "aboutLoza",
-      content: "VỀ LOZA",
-    },
-    {
       title: "Introduce",
       content: "Giới thiệu",
     },
@@ -122,10 +121,6 @@ export default function Controller({ setAdmin }) {
     },
   ];
   const supportCustomer = [
-    {
-      title: "support",
-      content: "HỖ TRỢ KHÁCH HÀNG",
-    },
     {
       title: "size",
       content: "Hướng dẫn chọn size",
@@ -255,6 +250,15 @@ export default function Controller({ setAdmin }) {
                     </span>
                   </li>
                 ))}
+                <li className="sidebar__link--item item__icon">
+                  <img
+                    className="sidebar__link--item__img"
+                    src="https://banner2.cleanpng.com/20180720/ivv/kisspng-computer-icons-user-profile-avatar-job-icon-5b521c567f49d7.5742234415321078625214.jpg"
+                  />
+                  <span onClick={() => handleSignIn()}>
+                    {user === true ? "Tài khoản" : "Đăng nhập"}
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
@@ -350,13 +354,19 @@ export default function Controller({ setAdmin }) {
                 <FaTiktok className="icon" />
               </li>
             </ul>
-          </div>{" "}
+          </div>
           <ul className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 footer__about">
+            <li style={{ textTransform: "uppercase", fontWeight: "600" }}>
+              Về Loza
+            </li>
             {aboutLoza.map((about) => (
               <li className="about--item">{about.content}</li>
             ))}
           </ul>
           <ul className="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 footer__support">
+            <li style={{ textTransform: "uppercase", fontWeight: "600" }}>
+              Hỗ trợ khách hàng
+            </li>
             {supportCustomer.map((support) => (
               <li className="support--item">{support.content}</li>
             ))}

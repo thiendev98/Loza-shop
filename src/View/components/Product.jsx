@@ -202,7 +202,7 @@ export default function Product({
           return (
             <>
               {current === 0 && detail === false && (
-                <li className="col-xl-3 product__content--item">
+                <li className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 c-12 product__content--item">
                   <div className="item__list">
                     <img
                       className="list__img"
@@ -226,11 +226,11 @@ export default function Product({
               {current === index && detail === true && (
                 <li className="detail--item">
                   <div className="row container-fluid">
-                    <div className="col-xl-6 detail__img">
+                    <div className="col-xl-6 col-lg-6 detail__img">
                       <img className="item--img" src={product.link[position]} />
                     </div>
 
-                    <div className="col-xl-6 detail__info">
+                    <div className="col-xl-6 col-lg-6 detail__info">
                       <h3>{product.name}</h3>
                       <p className="detail__info--code">Mã : {product.code}</p>
                       <p className="detail__info--price">{product.price} đ</p>
@@ -241,7 +241,7 @@ export default function Product({
                         {product.link.map((img, i) => (
                           <>
                             <img
-                              className="col-xl-3 detail__info--img"
+                              className="col-xl-3 col-lg-3 detail__info--img"
                               src={img}
                               onClick={() => handleClickImages(i)}
                             />
@@ -263,13 +263,13 @@ export default function Product({
                       </ul>
                       <div className="detail__info--button row container-fluid">
                         <button
-                          className="col-xl-6 btn--add__cart"
+                          className="col-xl-6 col-lg-6 btn--add__cart"
                           onClick={() => addToCart(product)}
                         >
                           Thêm vào giỏ hàng
                         </button>
                         <button
-                          className="col-xl-6 btn--buy__now"
+                          className="col-xl-6 col-lg-6 btn--buy__now"
                           onClick={() => goToCart(product)}
                         >
                           Mua ngay
@@ -278,12 +278,12 @@ export default function Product({
 
                       <div className="detail--item__info row container-fluid">
                         {listSevice.map((service, i) => (
-                          <div className="col-xl-6 row container-fluid information--item">
+                          <div className="col-xl-6 col-lg-6 row container-fluid information--item">
                             <img
-                              className="col-xl-3 service__img"
+                              className="col-xl-3 col-lg-3 service__img"
                               src={service.img}
                             />
-                            <div className="col-xl-9">
+                            <div className="col-xl-9 col-lg-9">
                               <p>
                                 <b>{service.title}</b>
                               </p>

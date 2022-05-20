@@ -166,8 +166,30 @@
   width: 32px;
 }
 
+#footer .footer__support .support--item {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+#footer .footer__support .support--item:hover {
+  margin-left: 1.5px;
+  color: #fcaf17;
+}
+
 #footer .footer__about {
   padding: 0 24px;
+}
+
+#footer .footer__about .about--item {
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+  cursor: pointer;
+}
+
+#footer .footer__about .about--item:hover {
+  margin-left: 1.5px;
+  color: #fcaf17;
 }
 
 #footer .footer__info .info--item {
@@ -241,7 +263,7 @@
   #header .col-xl-0 {
     display: none;
   }
-  .footer .center__bootstrap {
+  .footer .col-xl-0 {
     display: none;
   }
 }
@@ -307,6 +329,9 @@
   }
   #header .bars__list--product .sidebar__list .sidebar__link {
     padding: 0 24px;
+  }
+  #header .bars__list--product .sidebar__list .sidebar__link .item__icon {
+    display: none;
   }
   #header .bars__list--product .sidebar__list .sidebar__link--item {
     margin: 12px 0;
@@ -395,6 +420,9 @@
   }
   #header .bars__list--product .sidebar__list .sidebar__link {
     padding: 0 24px;
+  }
+  #header .bars__list--product .sidebar__list .sidebar__link .item__icon {
+    display: none;
   }
   #header .bars__list--product .sidebar__list .sidebar__link--item {
     margin: 12px 0;
@@ -486,6 +514,9 @@
   }
   #header .bars__list--product .sidebar__list .sidebar__link {
     padding: 0 24px;
+  }
+  #header .bars__list--product .sidebar__list .sidebar__link .item__icon {
+    display: none;
   }
   #header .bars__list--product .sidebar__list .sidebar__link--item {
     margin: 12px 0;
@@ -783,5 +814,268 @@
     height: 24px;
     width: 24px;
   }
+}
+
+#LoginPage {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+#LoginPage .form--login {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  max-width: 600px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#LoginPage .form--login .icon__cancel {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#LoginPage .form--login li {
+  margin: 12px 0;
+}
+
+#LoginPage .form--login li span {
+  cursor: pointer;
+}
+
+#LoginPage .form--login h4 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#LoginPage .form--login .form--warning {
+  color: red;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+#LoginPage .form--login .form--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 6px 0;
+}
+
+#LoginPage .form--login .form--item label {
+  float: left;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#LoginPage .form--login .form--item input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+}
+
+#LoginPage .form--login .button--login {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 12px 0;
+  vertical-align: middle;
+  background-color: #1b1a1a;
+  border: 1px solid #ddd;
+  color: #fff;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#LoginPage .form--login .button--login .row {
+  padding: 0;
+}
+
+#LoginPage .form--login .button--login:hover {
+  -webkit-transform: translate3d(0, -1px, 1px);
+          transform: translate3d(0, -1px, 1px);
+  background-color: #d9d9d9;
+  color: #000;
+}
+
+#LoginPage .form--login .button--login__gg {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 12px 0;
+  vertical-align: middle;
+  background: #e5e5e5;
+  border: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#LoginPage .form--login .button--login__gg .icon__gg {
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+}
+
+#LoginPage .form--login .form--login__select {
+  padding: 8px 0;
+  position: relative;
+  color: #ccc;
+  text-align: center;
+}
+
+#LoginPage .form--login .form--login__select::before {
+  background-color: #e5e5e5;
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 45%;
+  height: 1px;
+  top: 47%;
+}
+
+#LoginPage .form--login .form--login__select::after {
+  right: 0;
+  position: absolute;
+  background: #e5e5e5;
+  content: "";
+  width: 45%;
+  height: 1px;
+  top: 47%;
+}
+
+#LoginPage .form--register {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50vw;
+  max-width: 600px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#LoginPage .form--register .icon__cancel {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#LoginPage .form--register h4 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#LoginPage .form--register .form--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 6px 0;
+}
+
+#LoginPage .form--register .form--item label {
+  float: left;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#LoginPage .form--register .form--item input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  cursor: pointer;
+}
+
+#LoginPage .form--register .button--register {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 12px 0;
+  vertical-align: middle;
+  background-color: #1b1a1a;
+  border: 1px solid #ddd;
+  color: #fff;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#LoginPage .form--register .button--register:hover {
+  -webkit-transform: translate3d(0, -1px, 1px);
+          transform: translate3d(0, -1px, 1px);
+  background-color: #d9d9d9;
+  color: #000;
+}
+
+#LoginPage .form--register p {
+  padding-top: 6px;
+  text-align: center;
+}
+
+#LoginPage .form--register p span {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

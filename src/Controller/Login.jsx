@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/style.css";
+import "./styles/style.css";
 import $ from "jquery";
 import axios from "axios";
 import { FaGooglePlusG, FaTimes } from "react-icons/fa";

@@ -25,28 +25,28 @@ export default function Home({ nextPage }) {
         </Slider>
       </div>
       <div className="sales__list row container-fluid">
-        <div className="sales__list--item col-xl-3">
+        <div className="sales__list--item item--border--right--1 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 c-12">
           <p>
             <span className="item--decrease">Giảm</span>{" "}
             <span className="item--price">50K</span>
           </p>
           <p className="item--order">Đơn hàng từ 1000K</p>
         </div>
-        <div className="sales__list--item col-xl-3">
+        <div className="sales__list--item item--border--right--2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 c-12">
           <p>
             <span className="item--decrease">Giảm</span>{" "}
             <span className="item--price">100K</span>
           </p>
           <p className="item--order">Đơn hàng từ 1750K</p>
         </div>
-        <div className="sales__list--item col-xl-3">
+        <div className="sales__list--item item--border--right--3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 c-12">
           <p>
             <span className="item--decrease">Giảm</span>{" "}
             <span className="item--price">150K</span>
           </p>
           <p className="item--order">Đơn hàng từ 2000K</p>
         </div>
-        <div className="sales__list--discount col-xl-3">
+        <div className="sales__list--discount col-xl-3 col-lg-3 col-md-12 col-sm-12 col-6 c-12">
           <div className="item--discount">
             <p>Mã giảm giá</p>
             <span>Tự động theo hóa đơn</span>
@@ -57,7 +57,7 @@ export default function Home({ nextPage }) {
         <h3>Mua gì hôm nay?</h3>
         <ul className="home__content row container-fluid">
           {HomeList.map((product, i) => (
-            <li className="col-xl-3 home__content--item">
+            <li className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 c-12 home__content--item">
               <div className="item__list">
                 <img
                   className="list__img"

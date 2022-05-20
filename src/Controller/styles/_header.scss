@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
 }
-
 #header {
   height: 60px;
   .row {
@@ -25,7 +24,7 @@
       padding: 0 12px;
     }
     &__link {
-      font-size: 16px;
+      font-size: 15px;
       text-transform: uppercase;
       @include centerItem();
       flex-basis: 18%;
@@ -79,11 +78,6 @@
           color: #fff;
           font-size: 12px;
         }
-      }
-      lord-icon {
-        width: 36px;
-        height: 36px;
-        cursor: pointer;
       }
     }
   }

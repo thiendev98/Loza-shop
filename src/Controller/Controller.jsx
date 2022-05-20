@@ -12,9 +12,20 @@ import User from "../View/pages/User/User";
 import SearchPage from "../View/components/SearchPage";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
-import { FaFacebook, FaTiktok, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaTiktok,
+  FaInstagram,
+  FaTwitter,
+  FaBars,
+} from "react-icons/fa";
 import "./styles/style.css";
 import logo from "./images/logo.png";
+import shirt from "./images/shirt.jpg";
+import skirt from "./images/skirt.jpg";
+import trousers from "./images/trousers.jpg";
+import vest from "./images/vest.jpg";
+import tshirt from "./images/tshirt.jpg";
 defineLordIconElement(loadAnimation);
 const PAGE_HOME = "home";
 const PAGE_VEST = "vest";
@@ -29,6 +40,11 @@ export default function Controller({ setAdmin }) {
   const [user, setUser] = useState(false);
   const [searchProduct, setSearchProduct] = useState("");
   const nextPage = (pages) => {
+    setSearchProduct("");
+    setPage(pages);
+  };
+  const nextPageSideBar = (pages) => {
+    hideSideBars();
     setSearchProduct("");
     setPage(pages);
   };
@@ -47,6 +63,46 @@ export default function Controller({ setAdmin }) {
       $(".product__header").css("display", "none");
     }
   };
+  const showSideBars = () => {
+    $(".background__sidebars").css("display", "block");
+    $(".sidebar__list").css("transform", "translateX(0)");
+  };
+  const hideSideBars = () => {
+    $(".background__sidebars").css("display", "none");
+    $(".sidebar__list").css("transform", "translateX(-100%)");
+  };
+  const sideBarList = [
+    {
+      key: 1,
+      name: "Áo phông",
+      type: "shirt",
+      img: shirt,
+    },
+    {
+      key: 2,
+      name: "Áo sơ mi",
+      type: "tshirt",
+      img: tshirt,
+    },
+    {
+      key: 3,
+      name: "Quần nữ",
+      type: "trousers",
+      img: trousers,
+    },
+    {
+      key: 4,
+      name: "Chân váy",
+      type: "skirt",
+      img: skirt,
+    },
+    {
+      key: 5,
+      name: "Vest",
+      type: "vest",
+      img: vest,
+    },
+  ];
   const aboutLoza = [
     {
       title: "aboutLoza",
@@ -110,52 +166,25 @@ export default function Controller({ setAdmin }) {
       <div id="header">
         <div className="navbar row container-fluid">
           <div
-            className="navbar__logo col-xl-1"
+            className="navbar__logo col-xl-1 col-lg-2 col-md-2 col-sm-2 col-3"
             onClick={() => {
               nextPage(PAGE_HOME);
             }}
           >
             <img className="logo--img" src={logo} />
           </div>
-          <ul className="navbar__list col-xl-5">
-            <li
-              className="navbar__link"
-              onClick={() => {
-                nextPage(PAGE_SHIRT);
-              }}
-            >
-              Áo phông
-            </li>
-            <li
-              className="navbar__link"
-              onClick={() => {
-                nextPage(PAGE_TSHIRT);
-              }}
-            >
-              Áo sơ mi
-            </li>
-            <li
-              className="navbar__link"
-              onClick={() => {
-                nextPage(PAGE_TROUSERS);
-              }}
-            >
-              Quần
-            </li>
-            <li
-              className="navbar__link"
-              onClick={() => {
-                nextPage(PAGE_SKIRT);
-              }}
-            >
-              Chân váy
-            </li>
-            <li className="navbar__link" onClick={() => nextPage(PAGE_VEST)}>
-              Vest
-            </li>
+          <ul className="navbar__list col-xl-5 col-lg-0 col-md-0 col-sm-0 col-0">
+            {sideBarList.map((list) => (
+              <li
+                className="navbar__link"
+                onClick={() => nextPage(`${list.type}`)}
+              >
+                {list.name}
+              </li>
+            ))}
           </ul>
-          <div className="col-xl-1"></div>
-          <div className="navbar__search col-xl-4">
+          <div className="col-xl-1 col-lg-0 col-md-0 col-sm-0 col-0"></div>
+          <div className="navbar__search col-xl-4 col-lg-8 col-md-8 col-sm-7 col-6">
             <input
               className="search__in"
               type="text"
@@ -176,7 +205,7 @@ export default function Controller({ setAdmin }) {
               <img src="https://bizweb.dktcdn.net/100/438/408/themes/848101/assets/search.svg" />
             </button>
           </div>
-          <ul className="navbar__user col-xl-1">
+          <ul className="navbar__user col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
             <li className="user--customer">
               <lord-icon
                 onClick={() => handleLogin()}
@@ -199,6 +228,36 @@ export default function Controller({ setAdmin }) {
               <span>{cart.length}</span>
             </li>
           </ul>
+          <div className="col-xl-0 col-lg-1 col-md-1 col-sm-1 col-1 bars__list--product">
+            <FaBars className="icon__bars" onClick={() => showSideBars()} />
+            <div
+              className="background__sidebars"
+              onClick={() => hideSideBars()}
+            ></div>
+            <div className="sidebar__list">
+              <div className="sidebar__logo">
+                <img
+                  className="sidebar__logo--img"
+                  src={logo}
+                  onClick={() => nextPageSideBar("home")}
+                />
+              </div>
+              <ul className="sidebar__link">
+                {sideBarList.map((list) => (
+                  <li className="sidebar__link--item">
+                    <img className="sidebar__link--item__img" src={list.img} />
+                    <span
+                      onClick={() => {
+                        nextPageSideBar(`${list.type}`);
+                      }}
+                    >
+                      {list.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       {/*  */}
@@ -271,38 +330,38 @@ export default function Controller({ setAdmin }) {
       {/*  */}
       <div id="footer">
         <div className="footer row container-fluid">
-          <div className="col-xl-4 footer__logo">
+          <div className="col-xl-4 col-lg-4 col-md-12 footer__logo">
             <p>
               “Website đang trong quá trình vận hành thử nghiệm. Quý khách gặp
               sự cố cần phản ánh có thể gọi/zalo tới 0981.475.666 để được hỗ
               trợ. Rất mong nhận được sự thông cảm. Trân trọng!”
             </p>
-            <ul className="footer__list row container-fluid">
-              <li className="footer__link col-xl-1">
+            <ul className="footer__list row container-fluid col-xl-8">
+              <li className="footer__link col-xl-1 col-lg-1">
                 <FaFacebook className="icon" />
               </li>
-              <li className="footer__link col-xl-1">
+              <li className="footer__link col-xl-1 col-lg-1">
                 <FaInstagram className="icon" />
               </li>
-              <li className="footer__link col-xl-1">
+              <li className="footer__link col-xl-1 col-lg-1">
                 <FaTwitter className="icon" />
               </li>
-              <li className="footer__link col-xl-1">
+              <li className="footer__link col-xl-1 col-lg-1">
                 <FaTiktok className="icon" />
               </li>
             </ul>
-          </div>
-          <ul className="col-xl-2 footer__about">
+          </div>{" "}
+          <ul className="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-5 footer__about">
             {aboutLoza.map((about) => (
               <li className="about--item">{about.content}</li>
             ))}
           </ul>
-          <ul className="col-xl-2 footer__support">
+          <ul className="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-6 footer__support">
             {supportCustomer.map((support) => (
               <li className="support--item">{support.content}</li>
             ))}
           </ul>
-          <ul className="col-xl-4 footer__info">
+          <ul className="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-12 footer__info">
             {infoContact.map((info) => (
               <li className="info--item">
                 <img className="info--item__img" src={info.logo} />

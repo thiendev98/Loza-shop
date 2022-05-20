@@ -1,9 +1,10 @@
 import React from "react";
-
-export default function Admin() {
+import { Link } from "react-router-dom";
+export default function Admin({ setAdmin }) {
   return (
     <div id="AdminPage">
-      <h1>Admin page</h1>
+      <h1>Admin Page</h1>
+      <button onClick={() => setAdmin(false)}>Đăng xuất khỏi trái đất</button>
     </div>
   );
 }

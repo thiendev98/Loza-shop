@@ -1219,6 +1219,12 @@
 }
 
 @media (max-width: 768px) and (min-width: 576px) {
+  #HomePage .container {
+    padding: 0;
+  }
+  #HomePage .container h3 {
+    font-size: 18px;
+  }
   #HomePage .sales__list .item--border--right--3 {
     border-right: none;
   }
@@ -1410,6 +1416,12 @@
 }
 
 @media (max-width: 576px) and (min-width: 400px) {
+  #HomePage .container {
+    padding: 0;
+  }
+  #HomePage .container h3 {
+    font-size: 17px;
+  }
   #HomePage .sales__list .item--border--right--2 {
     border: none;
   }
@@ -1609,7 +1621,7 @@
     margin: 0;
   }
   #HomePage .container h3 {
-    font-size: 18px;
+    font-size: 16px;
   }
   #HomePage .row {
     display: -webkit-box;

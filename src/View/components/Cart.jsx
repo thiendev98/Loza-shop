@@ -10,9 +10,6 @@ export default function Cart({ cart, setCart, nextPage, onClick, user }) {
   const getTotalSumItem = (product) => {
     return product.price * product.quantity;
   };
-  const clearCart = () => {
-    setCart([]);
-  };
 
   const setQuantity = (product, amount) => {
     if (amount === 0) {
@@ -53,29 +50,44 @@ export default function Cart({ cart, setCart, nextPage, onClick, user }) {
       {cart.length > 0 && (
         <div className="cart__products">
           <div className="row container-fluid">
-            <div className="col-xl-9">
+            <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
               <header>
                 <h5>
                   Đơn hàng của bạn <span>({cart.length}) Sản phẩm</span>
                 </h5>
               </header>
               <div className="cart__products--header row container-fluid ">
-                <div className="col-xl-6">Sản phẩm</div>
-                <div className="col-xl-2"> Đơn giá </div>
-                <div className="col-xl-2"> Số lượng </div>
-                <div className="col-xl-2"> Thành tiền </div>
+                <div className="col-xl-6 col-lg-6 col-md-6 col-sm-7 col-6">
+                  Sản phẩm
+                </div>
+                <div className="col-xl-2 col-lg-2 col-md-2 col-sm-0 col-0 cart__products--header__price">
+                  Đơn giá{" "}
+                </div>
+                <div className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3">
+                  {" "}
+                  Số lượng{" "}
+                </div>
+                <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3">
+                  {" "}
+                  Thành tiền{" "}
+                </div>
               </div>
               {cart.map((product, idx) => (
                 <div
                   className="row container-fluid cart__products--item"
                   key={idx}
                 >
-                  <div className="col-xl-6 row container-fluid">
-                    <img className="col-xl-2" src={product.link} />
-                    <div className="col-xl-10">
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-7 col-6 row container-fluid">
+                    <img
+                      className="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-0"
+                      src={product.link}
+                    />
+                    <div className="col-xl-10 col-lg-9 col-md-9 col-sm-8 col-12">
                       <p className="cart__products--item__name">
                         {product.name}
+                        <p>{product.price} đ</p>
                       </p>
+
                       <div className="cart__products--item__size">
                         <span>{`${product.color} / ${product.size}`}</span>
                       </div>
@@ -88,10 +100,10 @@ export default function Cart({ cart, setCart, nextPage, onClick, user }) {
                       </button>
                     </div>
                   </div>
-                  <div className="col-xl-2 cart__products--item__price">
+                  <div className="col-xl-2 col-lg-2 col-md-2 col-sm-0 col-0 cart__products--item__price">
                     <span> {product.price} đ</span>
                   </div>
-                  <div className="col-xl-2 cart__products--item__quatity">
+                  <div className="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-3 cart__products--item__quatity">
                     <button
                       onClick={() =>
                         setQuantity(
@@ -109,13 +121,14 @@ export default function Cart({ cart, setCart, nextPage, onClick, user }) {
                       +
                     </button>
                   </div>
-                  <div className="col-xl-2 cart__products--item__total">
+                  <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-3 cart__products--item__total">
                     {getTotalSumItem(product)} đ{" "}
                   </div>
                 </div>
               ))}
             </div>
-            <div className="cart__products--payment col-xl-3">
+            <div className="col-xl-0 col-lg-0 col-md-3 col-sm-2 col-2"></div>
+            <div className="cart__products--payment col-xl-3 col-lg-3 col-md-6 col-sm-8 col-8">
               <div className="payment--title">
                 <lord-icon
                   className="icon__truck--kun"

@@ -54,9 +54,6 @@ export default function Controller({ setAdmin }) {
       : $("#LoginPage").css("display", "block") &&
         $(".form--warning").css("display", "none");
   };
-  const handleSignIn = () => {
-    user === true ? nextPage("userInformation") : nextPage("home");
-  };
   const searchProductFunction = () => {
     if (searchProduct === "") {
       setPage(PAGE_HOME);
@@ -255,9 +252,7 @@ export default function Controller({ setAdmin }) {
                     className="sidebar__link--item__img"
                     src="https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg"
                   />
-                  <span onClick={() => handleSignIn()}>
-                    {user === true ? "Tài khoản" : "Đăng nhập"}
-                  </span>
+                  <span>{user === true ? "Tài khoản" : "Đăng nhập"}</span>
                 </li>
               </ul>
             </div>

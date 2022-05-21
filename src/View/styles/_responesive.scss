@@ -4,6 +4,9 @@
   align-items: center;
 }
 @media (min-width: 1200px) {
+  .col-xl-0 {
+    display: none;
+  }
   #HomePage {
     .sales__list {
       &--discount {
@@ -30,6 +33,9 @@
   }
 }
 @media (min-width: 992px) and(max-width: 1200px) {
+  .col-lg-0 {
+    display: none;
+  }
   #HomePage {
     .sales__list {
       &--discount {
@@ -69,6 +75,9 @@
   }
 }
 @media (max-width: 992px) and (min-width: 768px) {
+  .col-md-0 {
+    display: none;
+  }
   #HomePage {
     .sales__list {
       .item--border--right--3 {
@@ -350,6 +359,38 @@
       }
     }
   }
+  #CartPage {
+    .col-sm-0 {
+      display: none;
+    }
+    .row {
+      padding: 6px;
+    }
+    .cart__products {
+      &--header {
+        font-size: 13px;
+      }
+      &--item {
+        &__name {
+          p {
+            display: block;
+            color: #fcaf17;
+            font-size: 16px;
+          }
+        }
+        &__total {
+          font-size: 14px;
+        }
+      }
+    }
+    .cart__products {
+      &--payment {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 576px) and (min-width: 400px) {
   #HomePage {
@@ -516,6 +557,47 @@
       &--detail {
         min-height: 480px;
         margin: 12px 0;
+      }
+    }
+  }
+  #CartPage {
+    .col-0 {
+      display: none;
+    }
+    .row {
+      padding: 6px;
+    }
+    .cart__products {
+      &--header {
+        font-size: 13px;
+      }
+      &--item {
+        .btn--remove {
+          span {
+            font-size: 13px;
+          }
+        }
+        &__name {
+          font-size: 14px;
+          p {
+            display: block;
+            color: #fcaf17;
+            font-size: 14px;
+          }
+        }
+        &__size {
+          span {
+            font-size: 14px;
+          }
+        }
+        &__quatity {
+          span {
+            font-size: 14px;
+          }
+        }
+        &__total {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -714,6 +796,47 @@
       &--detail {
         min-height: 480px;
         margin: 12px 0;
+      }
+    }
+  }
+  #CartPage {
+    .col-0 {
+      display: none;
+    }
+    .row {
+      padding: 6px;
+    }
+    .cart__products {
+      &--header {
+        font-size: 13px;
+      }
+      &--item {
+        .btn--remove {
+          span {
+            font-size: 13px;
+          }
+        }
+        &__name {
+          font-size: 13px;
+          p {
+            display: block;
+            color: #fcaf17;
+            font-size: 14px;
+          }
+        }
+        &__size {
+          span {
+            font-size: 13px;
+          }
+        }
+        &__quatity {
+          span {
+            font-size: 14px;
+          }
+        }
+        &__total {
+          font-size: 13px;
+        }
       }
     }
   }

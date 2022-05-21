@@ -561,9 +561,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
   #header .navbar__user .user--customer {
     display: none;
@@ -578,7 +578,6 @@
   }
   #header .navbar__search .btn--search {
     width: 42px;
-    margin-right: 6px;
   }
   #header .navbar__search .search__in {
     height: 32px;
@@ -691,9 +690,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
   #header .navbar__user .user--customer {
     display: none;
@@ -708,7 +707,6 @@
   }
   #header .navbar__search .btn--search {
     width: 42px;
-    margin-right: 6px;
   }
   #header .navbar__search .search__in {
     height: 28px;

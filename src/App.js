@@ -1,5 +1,5 @@
-import Controller from "./Controller/Controller";
-import Admin from "./View/Admin/Admin";
+import Controller from "./controller/Controller";
+import Admin from "./view/admin/Admin";
 import { useState } from "react";
 function App() {
   const [admin, setAdmin] = useState(false);

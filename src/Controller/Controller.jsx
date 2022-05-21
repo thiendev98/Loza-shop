@@ -1,15 +1,15 @@
 import { useState } from "react";
 import $ from "jquery";
-import Home from "../View/components/Home";
-import TShirt from "../View/components/TShirt";
-import Shirt from "../View/components/Shirt";
-import Skirt from "../View/components/Skirt";
-import Vest from "../View/components/Vest";
-import Cart from "../View/components/Cart";
-import Trousers from "../View/components/Trousers";
+import Home from "../view/components/Home";
+import TShirt from "../view/components/TShirt";
+import Shirt from "../view/components/Shirt";
+import Skirt from "../view/components/Skirt";
+import Vest from "../view/components/Vest";
+import Cart from "../view/components/Cart";
+import Trousers from "../view/components/Trousers";
 import Login from "./Login";
-import User from "../View/User/User";
-import SearchPage from "../View/components/SearchPage";
+import User from "../view/user/User";
+import SearchPage from "../view/components/SearchPage";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import {

@@ -1,13 +1,13 @@
-import blacklead from "../Modal/Skirt/blacklead.jpg";
-import chrysanthemum1 from "../Modal/Skirt/chrysanthemum1.jpg";
-import chrysanthemum2 from "../Modal/Skirt/chrysanthemum2.jpg";
-import chrysanthemum3 from "../Modal/Skirt/chrysanthemum3.jpg";
-import crossflap from "../Modal/Skirt/crossflap.jpg";
-import fishtail from "../Modal/Skirt/fishtail.jpg";
-import pinchwaist from "../Modal/Skirt/pinchwaist.jpg";
-import kakia1 from "../Modal/Skirt/kakia1.jpg";
-import kakia2 from "../Modal/Skirt/kakia2.jpg";
-import kakia3 from "../Modal/Skirt/kakia3.jpg";
+import blacklead from "../modal/skirt/blacklead.jpg";
+import chrysanthemum1 from "../modal/skirt/chrysanthemum1.jpg";
+import chrysanthemum2 from "../modal/skirt/chrysanthemum2.jpg";
+import chrysanthemum3 from "../modal/skirt/chrysanthemum3.jpg";
+import crossflap from "../modal/skirt/crossflap.jpg";
+import fishtail from "../modal/skirt/fishtail.jpg";
+import pinchwaist from "../modal/skirt/pinchwaist.jpg";
+import kakia1 from "../modal/skirt/kakia1.jpg";
+import kakia2 from "../modal/skirt/kakia2.jpg";
+import kakia3 from "../modal/skirt/kakia3.jpg";
 const SkirtList = [
   {
     key: 1,

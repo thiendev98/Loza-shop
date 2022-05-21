@@ -1,14 +1,14 @@
-import jeansdarkblue from "../Modal/Trousers/jeans_darkblue.jpg";
-import jeanslightblue from "../Modal/Trousers/jeans_lightblue.jpg";
-import shortcaro from "../Modal/Trousers/short_caro.jpg";
-import shortempty1 from "../Modal/Trousers/short_empty1.jpg";
-import shortempty2 from "../Modal/Trousers/short_empty2.jpg";
-import shortempty3 from "../Modal/Trousers/short_empty3.jpg";
-import shorttwobuttons1 from "../Modal/Trousers/short_twobuttons1.jpg";
-import shorttwobuttons2 from "../Modal/Trousers/short_twobuttons2.jpg";
-import shorttwobuttons3 from "../Modal/Trousers/short_twobuttons3.jpg";
-import shortpleated1 from "../Modal/Trousers/short_pleated1.jpg";
-import shortpleated2 from "../Modal/Trousers/short_pleated2.jpg";
+import jeansdarkblue from "../modal/trousers/jeans_darkblue.jpg";
+import jeanslightblue from "../modal/trousers/jeans_lightblue.jpg";
+import shortcaro from "../modal/trousers/short_caro.jpg";
+import shortempty1 from "../modal/trousers/short_empty1.jpg";
+import shortempty2 from "../modal/trousers/short_empty2.jpg";
+import shortempty3 from "../modal/trousers/short_empty3.jpg";
+import shorttwobuttons1 from "../modal/trousers/short_twobuttons1.jpg";
+import shorttwobuttons2 from "../modal/trousers/short_twobuttons2.jpg";
+import shorttwobuttons3 from "../modal/trousers/short_twobuttons3.jpg";
+import shortpleated1 from "../modal/trousers/short_pleated1.jpg";
+import shortpleated2 from "../modal/trousers/short_pleated2.jpg";
 const TrousersList = [
   {
     key: 1,

@@ -1,13 +1,13 @@
-import bowtieflowers from "../Modal/TShirt/bowtieflowers.jpg";
-import mixlace from "../Modal/TShirt/mixlace.jpg";
-import neck from "../Modal/TShirt/neck.jpg";
-import shorthanded from "../Modal/TShirt/shorthanded.jpg";
-import shorthandedblue from "../Modal/TShirt/shorthandedblue.jpg";
-import silkneck from "../Modal/TShirt/silkneck.jpg";
-import stylized from "../Modal/TShirt/stylized.jpg";
-import stylizedsilkneck from "../Modal/TShirt/stylizedsilkneck.jpg";
-import whitetshirt from "../Modal/TShirt/whitetshirt.jpg";
-import whitebowneck from "../Modal/TShirt/whitebowneck.jpg";
+import bowtieflowers from "../modal/tshirt/bowtieflowers.jpg";
+import mixlace from "../modal/tshirt/mixlace.jpg";
+import neck from "../modal/tshirt/neck.jpg";
+import shorthanded from "../modal/tshirt/shorthanded.jpg";
+import shorthandedblue from "../modal/tshirt/shorthandedblue.jpg";
+import silkneck from "../modal/tshirt/silkneck.jpg";
+import stylized from "../modal/tshirt/stylized.jpg";
+import stylizedsilkneck from "../modal/tshirt/stylizedsilkneck.jpg";
+import whitetshirt from "../modal/tshirt/whitetshirt.jpg";
+import whitebowneck from "../modal/tshirt/whitebowneck.jpg";
 const TShirtList = [
   {
     key: 1,

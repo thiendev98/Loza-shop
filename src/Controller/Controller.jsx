@@ -253,7 +253,7 @@ export default function Controller({ setAdmin }) {
                 <li className="sidebar__link--item item__icon">
                   <img
                     className="sidebar__link--item__img"
-                    src="https://banner2.cleanpng.com/20180720/ivv/kisspng-computer-icons-user-profile-avatar-job-icon-5b521c567f49d7.5742234415321078625214.jpg"
+                    src="https://thumbs.dreamstime.com/b/user-icon-trendy-flat-style-isolated-grey-background-user-symbol-user-icon-trendy-flat-style-isolated-grey-background-123663211.jpg"
                   />
                   <span onClick={() => handleSignIn()}>
                     {user === true ? "Tài khoản" : "Đăng nhập"}

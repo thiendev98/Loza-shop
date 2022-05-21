@@ -415,7 +415,7 @@
         top: 0 !important;
         left: 0;
         z-index: 99999;
-        width: 280px;
+        width: 260px;
         transform: translateX(-100%);
         transition-duration: 0.8s;
         transform-style: linear;
@@ -432,14 +432,14 @@
           &--item {
             margin: 12px 0;
             &__img {
-              width: 48px;
-              height: 48px;
+              width: 40px;
+              height: 40px;
               border-radius: 50%;
               cursor: pointer;
             }
             span {
               margin: 0 12px;
-              font-size: 16px;
+              font-size: 14px;
               cursor: pointer;
               transition-duration: 0.25s;
             }
@@ -467,7 +467,7 @@
     &__about,
     &__support,
     &__info {
-      font-size: 14px;
+      font-size: 13px;
     }
     &__info {
       .info--item {
@@ -552,7 +552,7 @@
         top: 0 !important;
         left: 0;
         z-index: 99999;
-        width: 280px;
+        width: 240px;
         transform: translateX(-100%);
         transition-duration: 0.8s;
         transform-style: linear;
@@ -569,14 +569,14 @@
           &--item {
             margin: 12px 0;
             &__img {
-              width: 48px;
-              height: 48px;
+              width: 32px;
+              height: 32px;
               border-radius: 50%;
               cursor: pointer;
             }
             span {
               margin: 0 12px;
-              font-size: 16px;
+              font-size: 13px;
               cursor: pointer;
               transition-duration: 0.25s;
             }

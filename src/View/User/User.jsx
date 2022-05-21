@@ -42,7 +42,7 @@ export default function User({ user, setUser, nextPage, cart, setCart }) {
         <span>Thông tin tài khoản</span>
       </div>
       <div className="user__content row container-fluid">
-        <div className="col-xl-3 user__content--list">
+        <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 user__content--list">
           <div className="user__content--list__img">
             <img
               className="list__img--avatar"
@@ -69,7 +69,7 @@ export default function User({ user, setUser, nextPage, cart, setCart }) {
             ))}
           </ul>
         </div>
-        <div className="col-xl-8 user__content--detail">
+        <div className="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-12 user__content--detail">
           <div className="user__content--detail__title">
             <span>{nameInfo}</span>
           </div>

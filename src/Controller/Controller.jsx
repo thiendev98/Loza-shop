@@ -9,7 +9,7 @@ import Cart from "../view/components/Cart";
 import Trousers from "../view/components/Trousers";
 import Login from "./Login";
 import User from "../view/user/User";
-import SearchPage from "../view/components/SearchPage";
+import Search from "../view/components/Search";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import {
@@ -307,7 +307,7 @@ export default function Controller({ setAdmin }) {
           />
         )}
         {page === "searchPage" && (
-          <SearchPage
+          <Search
             cart={cart}
             setCart={setCart}
             setPage={setPage}
